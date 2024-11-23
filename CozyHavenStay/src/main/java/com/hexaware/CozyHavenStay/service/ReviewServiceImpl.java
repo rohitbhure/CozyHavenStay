@@ -5,7 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.hexaware.CozyHavenStay.exception.ResourceNotFoundException;
+import com.hexaware.CozyHavenStay.dto.ReviewRequestDTO;
+import com.hexaware.CozyHavenStay.mapper.ReviewMapper;
 import com.hexaware.CozyHavenStay.model.Review;
 import com.hexaware.CozyHavenStay.repository.HotelRepository;
 import com.hexaware.CozyHavenStay.repository.ReviewRepository;
@@ -18,24 +19,27 @@ public class ReviewServiceImpl implements ReviewService {
     private ReviewRepository reviewRepository;
 
     @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
     private HotelRepository hotelRepository;
 
     @Autowired
-    private UserRepository userRepository;
+    private ReviewMapper reviewMapper;
 
     @Override
-    public Review addReview(Review review) {
-        // Validate user and hotel
-        userRepository.findById(review.getUser().getUserId())
-                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
-        hotelRepository.findById(review.getHotel().getHotelId())
-                .orElseThrow(() -> new ResourceNotFoundException("Hotel not found"));
-
+    public Review addReview(ReviewRequestDTO reviewRequestDTO) {
+        Review review = reviewMapper.toEntity(reviewRequestDTO);
         return reviewRepository.save(review);
     }
 
     @Override
     public List<Review> getReviewsByHotel(Long hotelId) {
         return reviewRepository.findByHotelHotelId(hotelId);
+    }
+
+    @Override
+    public List<Review> getReviewsByUser(Long userId) {
+        return reviewRepository.findByUserUserId(userId);
     }
 }

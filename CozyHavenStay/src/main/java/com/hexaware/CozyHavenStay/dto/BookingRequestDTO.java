@@ -4,76 +4,73 @@ import java.time.LocalDate;
 
 import jakarta.validation.constraints.NotNull;
 
+import jakarta.validation.constraints.NotNull;
+import java.time.LocalDate;
+
 public class BookingRequestDTO {
-    @NotNull
+
+    @NotNull(message = "User ID is required")
     private Long userId;
 
-    @NotNull
+    @NotNull(message = "Hotel ID is required")
     private Long hotelId;
 
-    @NotNull
+    @NotNull(message = "Room ID is required")
     private Long roomId;
 
-    @NotNull
     private LocalDate checkInDate;
 
-    @NotNull
     private LocalDate checkOutDate;
 
-	public BookingRequestDTO() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+    private String bookingStatus; // Added field for booking status
 
-	public BookingRequestDTO(@NotNull Long userId, @NotNull Long hotelId, @NotNull Long roomId,
-			@NotNull LocalDate checkInDate, @NotNull LocalDate checkOutDate) {
-		super();
-		this.userId = userId;
-		this.hotelId = hotelId;
-		this.roomId = roomId;
-		this.checkInDate = checkInDate;
-		this.checkOutDate = checkOutDate;
-	}
+    // Getters and Setters
 
-	public Long getUserId() {
-		return userId;
-	}
+    public Long getUserId() {
+        return userId;
+    }
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
-	}
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
 
-	public Long getHotelId() {
-		return hotelId;
-	}
+    public Long getHotelId() {
+        return hotelId;
+    }
 
-	public void setHotelId(Long hotelId) {
-		this.hotelId = hotelId;
-	}
+    public void setHotelId(Long hotelId) {
+        this.hotelId = hotelId;
+    }
 
-	public Long getRoomId() {
-		return roomId;
-	}
+    public Long getRoomId() {
+        return roomId;
+    }
 
-	public void setRoomId(Long roomId) {
-		this.roomId = roomId;
-	}
+    public void setRoomId(Long roomId) {
+        this.roomId = roomId;
+    }
 
-	public LocalDate getCheckInDate() {
-		return checkInDate;
-	}
+    public LocalDate getCheckInDate() {
+        return checkInDate;
+    }
 
-	public void setCheckInDate(LocalDate checkInDate) {
-		this.checkInDate = checkInDate;
-	}
+    public void setCheckInDate(LocalDate checkInDate) {
+        this.checkInDate = checkInDate;
+    }
 
-	public LocalDate getCheckOutDate() {
-		return checkOutDate;
-	}
+    public LocalDate getCheckOutDate() {
+        return checkOutDate;
+    }
 
-	public void setCheckOutDate(LocalDate checkOutDate) {
-		this.checkOutDate = checkOutDate;
-	}
-    
-    
+    public void setCheckOutDate(LocalDate checkOutDate) {
+        this.checkOutDate = checkOutDate;
+    }
+
+    public String getBookingStatus() { // Getter for bookingStatus
+        return bookingStatus;
+    }
+
+    public void setBookingStatus(String bookingStatus) { // Setter for bookingStatus
+        this.bookingStatus = bookingStatus;
+    }
 }

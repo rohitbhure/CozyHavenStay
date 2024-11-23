@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.hexaware.CozyHavenStay.dto.HotelRequestDTO;
 import com.hexaware.CozyHavenStay.exception.ResourceNotFoundException;
+import com.hexaware.CozyHavenStay.mapper.HotelMapper;
 import com.hexaware.CozyHavenStay.model.Hotel;
 import com.hexaware.CozyHavenStay.repository.HotelRepository;
 
@@ -15,8 +17,12 @@ public class HotelServiceImpl implements HotelService {
     @Autowired
     private HotelRepository hotelRepository;
 
+    @Autowired
+    private HotelMapper hotelMapper;
+
     @Override
-    public Hotel addHotel(Hotel hotel) {
+    public Hotel addHotel(HotelRequestDTO hotelRequestDTO) {
+        Hotel hotel = hotelMapper.toEntity(hotelRequestDTO);
         return hotelRepository.save(hotel);
     }
 
@@ -32,11 +38,9 @@ public class HotelServiceImpl implements HotelService {
     }
 
     @Override
-    public Hotel updateHotel(Long hotelId, Hotel hotel) {
+    public Hotel updateHotel(Long hotelId, HotelRequestDTO hotelRequestDTO) {
         Hotel existingHotel = getHotelById(hotelId);
-        existingHotel.setName(hotel.getName());
-        existingHotel.setLocation(hotel.getLocation());
-        existingHotel.setDescription(hotel.getDescription());
+        hotelMapper.updateEntity(existingHotel, hotelRequestDTO);
         return hotelRepository.save(existingHotel);
     }
 

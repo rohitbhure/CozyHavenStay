@@ -29,8 +29,8 @@ public class Room {
 
     @Override
 	public String toString() {
-		return "Room [roomId=" + roomId + ", hotel=" + hotel + ", roomType=" + roomType + ", pricePerNight="
-				+ pricePerNight + ", amenities=" + amenities + ", availabilityStatus=" + availabilityStatus + "]";
+		return "added Successfully";/*return "Room [roomId=" + roomId + ", hotel=" + hotel.getHotelId() + ", roomType=" + roomType + ", pricePerNight="
+				+ pricePerNight + ", amenities=" + amenities + ", availabilityStatus=" + availabilityStatus + "]";*/
 	}
 
 	public Long getRoomId() {

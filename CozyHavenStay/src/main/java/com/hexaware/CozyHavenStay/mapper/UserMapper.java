@@ -16,4 +16,10 @@ public class UserMapper {
         user.setPhoneNumber(dto.getPhoneNumber());
         return user;
     }
+    public void updateEntity(User user, UserRequestDTO dto) {
+        if (dto.getName() != null) user.setName(dto.getName());
+        if (dto.getEmail() != null) user.setEmail(dto.getEmail());
+        if (dto.getPhoneNumber() != null) user.setPhoneNumber(dto.getPhoneNumber());
+        // Avoid updating password directly unless explicitly requested
+    }
 }

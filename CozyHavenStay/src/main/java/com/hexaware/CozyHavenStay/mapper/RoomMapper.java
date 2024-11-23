@@ -27,4 +27,10 @@ public class RoomMapper {
         room.setAvailabilityStatus(dto.getAvailabilityStatus());
         return room;
     }
+    public void updateEntity(Room room, RoomRequestDTO dto) {
+        if (dto.getRoomType() != null) room.setRoomType(dto.getRoomType());
+        if (dto.getPricePerNight() != null) room.setPricePerNight(dto.getPricePerNight());
+        if (dto.getAmenities() != null) room.setAmenities(dto.getAmenities());
+        if (dto.getAvailabilityStatus() != null) room.setAvailabilityStatus(dto.getAvailabilityStatus());
+    }
 }
