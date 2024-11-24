@@ -2,6 +2,8 @@ package com.hexaware.CozyHavenStay.model;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,14 +19,17 @@ public class Booking {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonBackReference
     private User user;
 
     @ManyToOne
     @JoinColumn(name = "hotel_id")
+    @JsonBackReference
     private Hotel hotel;
 
     @ManyToOne
     @JoinColumn(name = "room_id")
+    @JsonBackReference
     private Room room;
 
     private LocalDate checkInDate;

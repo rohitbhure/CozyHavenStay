@@ -2,6 +2,8 @@ package com.hexaware.CozyHavenStay.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,12 +28,15 @@ public class Hotel {
     private Double rating;
 
     @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Room> rooms;
 
     @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Booking> bookings;
 
     @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Review> reviews;
 
 	public Hotel() {
