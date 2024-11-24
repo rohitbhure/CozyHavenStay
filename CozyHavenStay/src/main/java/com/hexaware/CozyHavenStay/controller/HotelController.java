@@ -1,6 +1,8 @@
 package com.hexaware.CozyHavenStay.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -54,6 +56,8 @@ public class HotelController {
     @DeleteMapping("/{hotelId}")
     public ResponseEntity<Void> deleteHotel(@PathVariable Long hotelId) {
         hotelService.deleteHotel(hotelId);
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("deleted", Boolean.TRUE);
         return ResponseEntity.noContent().build();
     }
 }
