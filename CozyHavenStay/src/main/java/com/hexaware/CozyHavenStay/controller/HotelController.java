@@ -54,10 +54,8 @@ public class HotelController {
     }
 
     @DeleteMapping("/{hotelId}")
-    public ResponseEntity<Void> deleteHotel(@PathVariable Long hotelId) {
+    public ResponseEntity<String> deleteHotel(@PathVariable Long hotelId) {
         hotelService.deleteHotel(hotelId);
-        Map<String, Boolean> response = new HashMap<>();
-        response.put("deleted", Boolean.TRUE);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok("Hotel Deleted");
     }
 }
