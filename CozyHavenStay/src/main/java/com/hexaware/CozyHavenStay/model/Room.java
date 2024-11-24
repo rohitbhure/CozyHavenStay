@@ -1,6 +1,10 @@
 package com.hexaware.CozyHavenStay.model;
 
+<<<<<<< HEAD
+import com.fasterxml.jackson.annotation.JsonBackReference;
+=======
 import com.fasterxml.jackson.annotation.JsonIgnore;
+>>>>>>> 67aca90d3e6e09ae11bf3d70139eea6afe7900bf
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,7 +22,11 @@ public class Room {
     
     @ManyToOne
     @JoinColumn(name = "hotel_id")
+<<<<<<< HEAD
+    @JsonBackReference
+=======
     @JsonIgnore
+>>>>>>> 67aca90d3e6e09ae11bf3d70139eea6afe7900bf
     private Hotel hotel;
 
     private String roomType;
@@ -30,12 +38,24 @@ public class Room {
 
     private Boolean availabilityStatus;
 
-    @Override
-	public String toString() {
-		return "added Successfully";/*return "Room [roomId=" + roomId + ", hotel=" + hotel.getHotelId() + ", roomType=" + roomType + ", pricePerNight="
-				+ pricePerNight + ", amenities=" + amenities + ", availabilityStatus=" + availabilityStatus + "]";*/
+    public Room() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
+    public Room(Long roomId, Hotel hotel, String roomType, Double pricePerNight, String amenities,
+			Boolean availabilityStatus) {
+		super();
+		this.roomId = roomId;
+		this.hotel = hotel;
+		this.roomType = roomType;
+		this.pricePerNight = pricePerNight;
+		this.amenities = amenities;
+		this.availabilityStatus = availabilityStatus;
+	}
+
+	
+	
 	public Long getRoomId() {
 		return roomId;
 	}
@@ -84,20 +104,11 @@ public class Room {
 		this.availabilityStatus = availabilityStatus;
 	}
 
-	public Room(Long roomId, Hotel hotel, String roomType, Double pricePerNight, String amenities,
-			Boolean availabilityStatus) {
-		super();
-		this.roomId = roomId;
-		this.hotel = hotel;
-		this.roomType = roomType;
-		this.pricePerNight = pricePerNight;
-		this.amenities = amenities;
-		this.availabilityStatus = availabilityStatus;
-	}
-
-	public Room() {
-		super();
-		// TODO Auto-generated constructor stub
+	
+	@Override
+	public String toString() {
+		return "Room [roomId=" + roomId + ", hotel=" + hotel.getHotelId() + ", roomType=" + roomType + ", pricePerNight="
+				+ pricePerNight + ", amenities=" + amenities + ", availabilityStatus=" + availabilityStatus + "]";
 	}
 
 	
