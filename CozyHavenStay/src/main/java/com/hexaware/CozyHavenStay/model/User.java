@@ -1,16 +1,24 @@
 package com.hexaware.CozyHavenStay.model;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.hibernate.annotations.CreationTimestamp;
+
+
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 
 @Entity
@@ -37,6 +45,14 @@ public class User {
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Review> reviews;
+    
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+        name = "user_roles", 
+        joinColumns = @JoinColumn(name = "user_id"),
+        inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private Set<Role> roles = new HashSet<>();
 
 	public User() {
 		super();
@@ -44,7 +60,7 @@ public class User {
 	}
 
 	public User(Long userId, String name, String email, String password, String phoneNumber, LocalDateTime createdAt,
-			List<Booking> bookings, List<Review> reviews) {
+			List<Booking> bookings, List<Review> reviews,Set<Role> roles) {
 		super();
 		this.userId = userId;
 		this.name = name;
@@ -54,6 +70,15 @@ public class User {
 		this.createdAt = createdAt;
 		this.bookings = bookings;
 		this.reviews = reviews;
+		this.roles = roles;
+	}
+
+	public Set<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
 	}
 
 	public Long getUserId() {

@@ -15,6 +15,7 @@ public class UserRequestDTO {
     private String password;
 
     private String phoneNumber;
+    private String role;
 
 	public UserRequestDTO() {
 		super();
@@ -28,6 +29,14 @@ public class UserRequestDTO {
 		this.email = email;
 		this.password = password;
 		this.phoneNumber = phoneNumber;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	public String getName() {

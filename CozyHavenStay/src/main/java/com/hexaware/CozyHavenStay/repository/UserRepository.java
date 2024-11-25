@@ -16,6 +16,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     // Find user by email
     Optional<User> findByEmail(String email);
+    
+    Optional<User> findByName(String name);
 
     // Custom query to find all users created after a specific date
     @Query("SELECT u FROM User u WHERE u.createdAt > :date")
@@ -24,4 +26,11 @@ public interface UserRepository extends JpaRepository<User, Long> {
     // Native query to count total users
     @Query(value = "SELECT COUNT(*) FROM user", nativeQuery = true)
     Long countTotalUsers();
+    
+	Boolean existsByEmail(String email);
+
+	Optional<User> findBynameOrEmail(String name, String email);
+
+	
+
 }
