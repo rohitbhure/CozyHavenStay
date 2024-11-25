@@ -1,19 +1,21 @@
 package com.hexaware.CozyHavenStay.aspect;
 
 import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 //import org.slf4j.Logger;
+
+import org.apache.logging.log4j.core.Logger;
 import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
 public class LoggingAspect {
-	Logger log = LogManager.getRootLogger();
+	Logger log = (Logger) LogManager.getRootLogger();
 
 //    @Before("execution(* com.hexaware.jpasampleproject.service.ProductServiceImpl.addproduct*.*(..))")
 //    public void logMethodCall() {
@@ -30,7 +32,7 @@ public class LoggingAspect {
 	@Before("createUserPointcut()") // point-cut expression
 	public void logBeforeV1(JoinPoint joinPoint) {
 
-		System.out.println("ProductCRUDAspect.logBeforecreateUser() : " + joinPoint.getSignature().getName());
+		System.out.println("CreateUserAspect.logBeforecreateUser() : " + joinPoint.getSignature().getName());
 	}
 
 	@AfterThrowing(pointcut = "execution(* com.hexaware.CozyHavenStay.service.UserServiceImpl.getUserById(..))", throwing = "error")

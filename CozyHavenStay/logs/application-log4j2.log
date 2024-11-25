@@ -1,0 +1,34 @@
+2024-11-25 17:21:52 [background-preinit] INFO  : HV000001: Hibernate Validator 8.0.1.Final
+2024-11-25 17:21:52 [restartedMain] INFO  : Starting CozyHavenStayApplication using Java 21.0.4 with PID 17936 (C:\Users\ADITY\CozyHavenStay\CozyHavenStay\target\classes started by ADITY in C:\Users\ADITY\CozyHavenStay\CozyHavenStay)
+2024-11-25 17:21:52 [restartedMain] INFO  : No active profile set, falling back to 1 default profile: "default"
+2024-11-25 17:21:52 [restartedMain] INFO  : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-11-25 17:21:52 [restartedMain] INFO  : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-11-25 17:21:53 [restartedMain] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-25 17:21:53 [restartedMain] INFO  : Finished Spring Data repository scanning in 68 ms. Found 6 JPA repository interfaces.
+2024-11-25 17:21:54 [restartedMain] INFO  : Tomcat initialized with port 8082 (http)
+2024-11-25 17:21:54 [restartedMain] INFO  : Initializing ProtocolHandler ["http-nio-8082"]
+2024-11-25 17:21:54 [restartedMain] INFO  : Starting service [Tomcat]
+2024-11-25 17:21:54 [restartedMain] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-11-25 17:21:54 [restartedMain] INFO  : Initializing Spring embedded WebApplicationContext
+2024-11-25 17:21:54 [restartedMain] INFO  : Root WebApplicationContext: initialization completed in 1885 ms
+2024-11-25 17:21:54 [restartedMain] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-25 17:21:54 [restartedMain] INFO  : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-25 17:21:55 [restartedMain] INFO  : HHH000026: Second-level cache disabled
+2024-11-25 17:21:55 [restartedMain] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-25 17:21:55 [restartedMain] INFO  : HikariPool-1 - Starting...
+2024-11-25 17:21:55 [restartedMain] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@c9b47c1
+2024-11-25 17:21:55 [restartedMain] INFO  : HikariPool-1 - Start completed.
+2024-11-25 17:21:55 [restartedMain] WARN  : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-11-25 17:21:55 [restartedMain] WARN  : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-11-25 17:21:56 [restartedMain] INFO  : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-25 17:21:56 [restartedMain] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-25 17:21:56 [restartedMain] INFO  : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-25 17:21:57 [restartedMain] INFO  : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-11-25 17:21:57 [restartedMain] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-25 17:21:58 [restartedMain] INFO  : LiveReload server is running on port 35729
+2024-11-25 17:21:58 [restartedMain] INFO  : Starting ProtocolHandler ["http-nio-8082"]
+2024-11-25 17:21:58 [restartedMain] INFO  : Tomcat started on port 8082 (http) with context path '/'
+2024-11-25 17:21:58 [restartedMain] INFO  : Started CozyHavenStayApplication in 5.998 seconds (process running for 6.879)
+2024-11-25 17:22:09 [http-nio-8082-exec-2] INFO  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-25 17:22:09 [http-nio-8082-exec-2] INFO  : Initializing Servlet 'dispatcherServlet'
+2024-11-25 17:22:09 [http-nio-8082-exec-2] INFO  : Completed initialization in 1 ms
