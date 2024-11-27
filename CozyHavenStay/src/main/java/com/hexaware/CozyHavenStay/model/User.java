@@ -7,8 +7,6 @@ import java.util.Set;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,6 +18,8 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 
 @Entity
 public class User {
@@ -28,7 +28,12 @@ public class User {
     private Long userId;
 
     private String name;
-
+    
+    @NotBlank(message = "Email is mandatory")
+    @Pattern(
+            regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$",
+            message = "Invalid email format"
+        )
     @Column(unique = true, nullable = false)
     private String email;
 
