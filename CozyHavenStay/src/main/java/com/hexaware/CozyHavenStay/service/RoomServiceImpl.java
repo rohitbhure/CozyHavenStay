@@ -54,6 +54,9 @@ public class RoomServiceImpl implements RoomService {
 
     @Override
     public void deleteRoom(Long roomId) {
-        roomRepository.deleteById(roomId);
+        // Validate if room exists
+        Room existingRoom = roomRepository.findById(roomId)
+                .orElseThrow(() -> new ResourceNotFoundException("Room not found with ID: " + roomId));
+        roomRepository.delete(existingRoom);
     }
 }

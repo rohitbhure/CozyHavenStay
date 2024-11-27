@@ -104,7 +104,8 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public void cancelBooking(Long bookingId) {
-        Booking booking = getBookingById(bookingId);
+        Booking booking = bookingRepository.findById(bookingId)
+                .orElseThrow(() -> new ResourceNotFoundException("Booking not found with ID: " + bookingId));
         booking.setBookingStatus("Cancelled");
         bookingRepository.save(booking);
     }
