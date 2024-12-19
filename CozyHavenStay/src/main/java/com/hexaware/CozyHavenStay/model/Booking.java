@@ -1,14 +1,10 @@
 package com.hexaware.CozyHavenStay.model;
 
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -27,7 +23,7 @@ public class Booking {
 
     private String phoneNo;
 
-    public Booking(Long id, String name, String email, String phoneNo, String aadharImg, int noOfRooms, int noOfAdults,
+    public Booking(Long id, String name, String email, String phoneNo, int aadharNumber, int noOfRooms, int noOfAdults,
 			int noOfChildren, LocalDate arrivalDate, LocalDate departureDate, double totalBill, LocalDate bookingDate,
 			Hotel hotel, Room room, User user, String roomType) {
 		super();
@@ -35,7 +31,7 @@ public class Booking {
 		this.name = name;
 		this.email = email;
 		this.phoneNo = phoneNo;
-		this.aadharImg = aadharImg;
+		this.aadharNumber = aadharNumber;
 		this.noOfRooms = noOfRooms;
 		this.noOfAdults = noOfAdults;
 		this.noOfChildren = noOfChildren;
@@ -57,7 +53,7 @@ public class Booking {
 		this.bookingDate = bookingDate;
 	}
 
-	private String aadharImg;
+	private int aadharNumber;
 
     private int noOfRooms;
 
@@ -131,12 +127,12 @@ public class Booking {
 		this.phoneNo = phoneNo;
 	}
 
-	public String getAadharImg() {
-		return aadharImg;
+	public int getAadharNumber() {
+		return aadharNumber;
 	}
 
-	public void setAadharImg(String aadharImg) {
-		this.aadharImg = aadharImg;
+	public void setAadharNumber(int aadharNumber) {
+		this.aadharNumber = aadharNumber;
 	}
 
 	public int getNoOfRooms() {
@@ -213,8 +209,8 @@ public class Booking {
 
 	@Override
 	public String toString() {
-		return "Booking [id=" + id + ", name=" + name + ", email=" + email + ", phoneNo=" + phoneNo + ", aadharImg="
-				+ aadharImg + ", noOfRooms=" + noOfRooms + ", noOfAdults=" + noOfAdults + ", noOfChildren="
+		return "Booking [id=" + id + ", name=" + name + ", email=" + email + ", phoneNo=" + phoneNo + ", aadharNumber="
+				+ aadharNumber + ", noOfRooms=" + noOfRooms + ", noOfAdults=" + noOfAdults + ", noOfChildren="
 				+ noOfChildren + ", arrivalDate=" + arrivalDate + ", departureDate=" + departureDate + ", totalBill="
 				+ totalBill + ", bookingDate=" + bookingDate + ", hotel=" + hotel + ", room=" + room + ", user=" + user
 				+ ", roomType=" + roomType + "]";

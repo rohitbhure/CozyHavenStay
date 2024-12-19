@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.hexaware.CozyHavenStay.Enum.Roles;
 import com.hexaware.CozyHavenStay.dto.UserDTO;
@@ -127,5 +129,40 @@ public class UserController {
             
         }
         return new ResponseEntity<>(users, HttpStatus.OK);
+    }
+   
+
+
+    @PostMapping("/uploadProfileImage/{id}")
+    public ResponseEntity<String> uploadProfileImage(@PathVariable Long id, 
+                                                     @RequestParam("file") MultipartFile file) {
+        try {
+            User user = userService.findById(id).orElseThrow(() -> new UserNotFoundException("User not found"));
+            
+            // Convert MultipartFile to byte[] and update the user's profile image
+            byte[] profileImageBytes = file.getBytes();
+            user.setProfilePicture(profileImageBytes);
+            userService.save(user); // Save the updated user with the image
+            
+            return new ResponseEntity<>("Profile image uploaded successfully.", HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>("Failed to upload image: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/getProfileImage/{id}")
+    public ResponseEntity<byte[]> getProfileImage(@PathVariable Long id) {
+        try {
+            User user = userService.findById(id).orElseThrow(() -> new UserNotFoundException("User not found"));
+            byte[] profileImage = user.getProfilePicture();
+
+            if (profileImage != null) {
+                return new ResponseEntity<>(profileImage, HttpStatus.OK);
+            } else {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT); // No image found
+            }
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }

@@ -18,7 +18,7 @@ public class BookingDTO {
 
     private String phoneNo;
 
-    private String aadharImg;
+    private int aadharNumber;
 
     private int noOfRooms;
 
@@ -32,7 +32,7 @@ public class BookingDTO {
 
     private double totalBill;
     
-    public BookingDTO(Long id, String name, String email, String phoneNo, String aadharImg, int noOfRooms,
+    public BookingDTO(Long id, String name, String email, String phoneNo, int aadharNumber, int noOfRooms,
 			int noOfAdults, int noOfChildren, LocalDate arrivalDate, LocalDate departureDate, double totalBill,
 			LocalDate bookingDate, Long hotelId, Long roomId, Long userId, String roomType) {
 		super();
@@ -40,7 +40,7 @@ public class BookingDTO {
 		this.name = name;
 		this.email = email;
 		this.phoneNo = phoneNo;
-		this.aadharImg = aadharImg;
+		this.aadharNumber = aadharNumber;
 		this.noOfRooms = noOfRooms;
 		this.noOfAdults = noOfAdults;
 		this.noOfChildren = noOfChildren;
@@ -138,12 +138,12 @@ public class BookingDTO {
 		this.phoneNo = phoneNo;
 	}
 
-	public String getAadharImg() {
-		return aadharImg;
+	public int getAadharNumber() {
+		return aadharNumber;
 	}
 
 	public void setAadharImg(String aadharImg) {
-		this.aadharImg = aadharImg;
+		this.aadharNumber = aadharNumber;
 	}
 
 	public int getNoOfRooms() {
@@ -206,8 +206,8 @@ public class BookingDTO {
 
 	@Override
 	public String toString() {
-		return "BookingDTO [id=" + id + ", name=" + name + ", email=" + email + ", phoneNo=" + phoneNo + ", aadharImg="
-				+ aadharImg + ", noOfRooms=" + noOfRooms + ", noOfAdults=" + noOfAdults + ", noOfChildren="
+		return "BookingDTO [id=" + id + ", name=" + name + ", email=" + email + ", phoneNo=" + phoneNo + ", aadharNumber="
+				+ aadharNumber + ", noOfRooms=" + noOfRooms + ", noOfAdults=" + noOfAdults + ", noOfChildren="
 				+ noOfChildren + ", arrivalDate=" + arrivalDate + ", departureDate=" + departureDate + ", totalBill="
 				+ totalBill + ", bookingDate=" + bookingDate + ", hotelId=" + hotelId + ", roomId=" + roomId
 				+ ", userId=" + userId + ", roomType=" + roomType + "]";

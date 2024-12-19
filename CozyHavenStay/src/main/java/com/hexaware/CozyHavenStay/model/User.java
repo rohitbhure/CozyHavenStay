@@ -1,6 +1,7 @@
 package com.hexaware.CozyHavenStay.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -21,53 +22,65 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    
-    
     private String name;
     private String username;
-    
-    public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String Username) {
-		username = Username;
-	}
-
-	private String email;
+    private String email;
     private String password;
-    
 
-    public User(Long id, String name, String username, String email, String password, Roles role,
-			List<Booking> bookings) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.username = username;
-		this.email = email;
-		this.password = password;
-		this.role = role;
-		this.bookings = bookings;
-	}
-
-	public List<Booking> getBookings() {
-		return bookings;
-	}
-
-	public void setBookings(List<Booking> bookings) {
-		this.bookings = bookings;
-	}
-
-	@Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING)
     private Roles role; 
     
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
     private List<Booking> bookings = new ArrayList<>();
 
-    
+    // New fields
+    private String gender; // Gender (e.g., "Male", "Female", "Other")
+    private Date dateOfBirth; // Date of Birth
+    private byte[] profilePicture; // Profile picture as a byte array
 
-    // Getters and Setters
+    // Constructor
+    public User(Long id, String name, String username, String email, String password, Roles role, 
+                List<Booking> bookings, String gender, Date dateOfBirth, byte[] profilePicture) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+        this.bookings = bookings;
+        this.gender = gender;
+        this.dateOfBirth = dateOfBirth;
+        this.profilePicture = profilePicture;
+    }
+
+    // Getters and Setters for the new fields
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public byte[] getProfilePicture() {
+        return profilePicture;
+    }
+
+    public void setProfilePicture(byte[] profilePicture) {
+        this.profilePicture = profilePicture;
+    }
+
+    // Getters and Setters for the existing fields
     public Long getId() {
         return id;
     }
@@ -76,35 +89,29 @@ public class User {
         this.id = id;
     }
 
-    
-
-    public String getPassword() {
-        return password;
+    public String getUsername() {
+        return username;
     }
 
-    public void setPassword(String Password) {
-        this.password = Password;
+    public void setUsername(String username) {
+        this.username = username;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String Name) {
-        this.name = Name;
-    }
-
-    
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String Email) {
-        this.email = Email;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public Roles getRole() {
         return role;
@@ -113,20 +120,23 @@ public class User {
     public void setRole(Roles role) {
         this.role = role;
     }
-    
-    public User(){
-    	
+
+    public List<Booking> getBookings() {
+        return bookings;
     }
 
-	
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
+    }
+
+    // Default constructor
+    public User() {
+    }
 
     @Override
     public String toString() {
         return "User [id=" + id + ", name=" + name + ", username=" + username + ", email=" + email + ", password=" 
-                + password + ", role=" + role + ", bookings=" + (bookings != null ? bookings.size() : 0) + "]";
+                + password + ", role=" + role + ", bookings=" + (bookings != null ? bookings.size() : 0) 
+                + ", gender=" + gender + ", dateOfBirth=" + dateOfBirth + "]";
     }
-
-
-    
 }
-

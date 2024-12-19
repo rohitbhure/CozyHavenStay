@@ -1,131 +1,113 @@
 package com.hexaware.CozyHavenStay.dto;
 
-
-import java.util.List;
+import java.util.Date;
 
 import com.hexaware.CozyHavenStay.Enum.Roles;
-import com.hexaware.CozyHavenStay.model.Booking;
 
 public class UserDTO {
-private Long id;
-
-    
+    private Long id;
     
     private String name;
     private String username;
     
-    public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String Username) {
-		username = Username;
-	}
-    
     private String email;
     private String password;
     
-
-    
     private Roles role; // "USER", "OWNER", or "ADMIN"
     
-    
-    //private List<Booking> bookings = new ArrayList<>();
+    // New fields for UserDTO
+    private String gender; // Gender (e.g., "Male", "Female", "Other")
+    private Date dateOfBirth; // Date of Birth
+    private String profilePictureUrl; // URL of profile picture (or you can use byte[] if you want image data)
 
+    // Constructor with new fields
+    public UserDTO(Long id, String name, String username, String email, String password, Roles role, 
+                   String gender, Date dateOfBirth, String profilePictureUrl) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+        this.gender = gender;
+        this.dateOfBirth = dateOfBirth;
+        this.profilePictureUrl = profilePictureUrl;
+    }
 
+    // Getters and Setters for the new fields
+    public String getGender() {
+        return gender;
+    }
 
-	public UserDTO(Long id, String name, String username, String email, String password, Roles role,
-			List<Booking> bookings) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.username = username;
-		this.email = email;
-		this.password = password;
-		this.role = role;
-		//this.bookings = bookings;
-	}
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
-	/*
-	 * public List<Booking> getBookings() { return bookings; }
-	 * 
-	 * public void setBookings(List<Booking> bookings) { this.bookings = bookings; }
-	 */
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
 
-	public Long getId() {
-		return id;
-	}
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
 
+    public String getProfilePictureUrl() {
+        return profilePictureUrl;
+    }
 
+    public void setProfilePictureUrl(String profilePictureUrl) {
+        this.profilePictureUrl = profilePictureUrl;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    // Getters and Setters for existing fields
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
+    public String getUsername() {
+        return username;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
+    public String getEmail() {
+        return email;
+    }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public void setName(String Name) {
-		name = Name;
-	}
+    public String getPassword() {
+        return password;
+    }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
+    public Roles getRole() {
+        return role;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public void setRole(Roles role) {
+        this.role = role;
+    }
 
+    public UserDTO() {
+    }
 
-
-	public void setEmail(String Email) {
-		email = Email;
-	}
-
-
-
-	public String getPassword() {
-		return password;
-	}
-
-
-
-	public void setPassword(String Password) {
-		password = Password;
-	}
-
-
-
-	public Roles getRole() {
-		return role;
-	}
-
-
-
-	public void setRole(Roles role) {
-		this.role = role;
-	}
-	
-	public UserDTO() {
-		
-	}
-
-
-
-
-	@Override
-	public String toString() {
-	    return "UserDTO [id=" + id + ", name=" + name + ", username=" + username + ", email=" + email + ", password=" 
-				+ password + ", role=" + role + ", bookings=" + /* (bookings != null ? bookings.size() : 0) + */ "]";
-	}
-
-
-    
-    
-
-	
+    @Override
+    public String toString() {
+        return "UserDTO [id=" + id + ", name=" + name + ", username=" + username + ", email=" + email + ", password=" 
+                + password + ", role=" + role + ", gender=" + gender + ", dateOfBirth=" + dateOfBirth 
+                + ", profilePictureUrl=" + profilePictureUrl + "]";
+    }
 }

@@ -30,7 +30,7 @@ public class BookingServiceImpl {
     public Booking updateBooking(Long id, Booking bookingDetails) {
         Booking booking = bookingRepository.findById(id).orElse(null);
         if(booking!=null) {
-        booking.setAadharImg(bookingDetails.getAadharImg());
+        booking.setAadharNumber(bookingDetails.getAadharNumber());
         booking.setArrivalDate(bookingDetails.getArrivalDate());
         booking.setDepartureDate(bookingDetails.getDepartureDate());
         booking.setEmail(bookingDetails.getEmail());
