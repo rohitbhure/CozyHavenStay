@@ -1,59 +1,118 @@
 package com.hexaware.CozyHavenStay.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.hexaware.CozyHavenStay.dto.UserRequestDTO;
-import com.hexaware.CozyHavenStay.exception.ResourceNotFoundException;
-import com.hexaware.CozyHavenStay.mapper.UserMapper;
+import com.hexaware.CozyHavenStay.Enum.Roles;
+import com.hexaware.CozyHavenStay.model.HotelOwner;
 import com.hexaware.CozyHavenStay.model.User;
+import com.hexaware.CozyHavenStay.repository.HotelOwnerRepository;
 import com.hexaware.CozyHavenStay.repository.UserRepository;
 
 @Service
-public class UserServiceImpl implements UserService {
-
+public class UserServiceImpl {
+	
+	
+	@Autowired
+    private PasswordEncoder passwordEncoder;
+	
     @Autowired
-    private UserRepository userRepository;
-
+    private UserRepository userRepository;  
+    
     @Autowired
-    private UserMapper userMapper;
+    private HotelOwnerRepository hotelOwnerRepository;  
 
-    @Override
-    public User createUser(UserRequestDTO userRequestDTO) {
-        // Convert DTO to entity
-        User user = userMapper.toEntity(userRequestDTO);
-        // Save entity
-        return userRepository.save(user);
+    
+    public User registerUser(User user) {
+    	User user1 = userRepository.save(user);
+    	if (user1.getRole() == Roles.HOTEL_OWNER) {
+            HotelOwner hotelOwner = new HotelOwner();
+            hotelOwner.setUser(user1);
+            hotelOwnerRepository.save(hotelOwner);
+        }
+        return user1;
     }
 
-    @Override
-    public User getUserById(Long userId) {
-        // Fetch user or throw exception
-        return userRepository.findById(userId)
-                .orElseThrow(() -> new ResourceNotFoundException("User not found with ID: " + userId));
+    
+    
+
+    // Find a user by their ID
+    public Optional<User> findById(Long id) {
+        return userRepository.findById(id);
     }
 
-    @Override
-    public List<User> getAllUsers() {
-        // Fetch all users
-        return userRepository.findAll();
-    }
-
-    @Override
-    public User updateUser(Long userId, UserRequestDTO userRequestDTO) {
-        // Fetch existing user
-        User existingUser = getUserById(userId);
-        // Map updated fields from DTO to existing entity
-        userMapper.updateEntity(existingUser, userRequestDTO);
-        // Save updated entity
+    
+    public User updateUser(Long id, User userDetails) {
+        User existingUser = userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
+        existingUser.setName(userDetails.getName());
+        
+        existingUser.setEmail(userDetails.getEmail());
+        existingUser.setUsername(userDetails.getUsername());
+        if(userDetails.getPassword()!=null) {
+        //System.out.println(userDetails.getPassword());
+        userDetails.setPassword(encodePassword(userDetails.getPassword()));
+        //System.out.println(userDetails.getPassword());
+        existingUser.setPassword(userDetails.getPassword());
+        }
+        
+        
         return userRepository.save(existingUser);
     }
 
-    @Override
-    public void deleteUser(Long userId) {
-        // Delete user
-        userRepository.deleteById(userId);
+    
+    public String deleteUser(Long id) {
+    	User u= userRepository.findById(id).orElse(null);
+    	if(u!=null) {
+        userRepository.deleteById(id);
+		return "Deleted";
+    	}
+    	else {
+			return "Not Found";
+		}
     }
+
+
+
+
+	public List<User> showall() {
+		List<User> user=userRepository.findAll();
+		return user;
+		
+	}
+
+
+
+
+	public List<User> getUsersByRole(Roles role) {
+		List<User> li=userRepository.findByRole(role);
+		return li;
+	}
+
+
+
+
+	public String encodePassword(String password) {
+        // Encrypt the password using BCryptPasswordEncoder
+        return passwordEncoder.encode(password);
+    }
+
+
+
+
+	public User findByUsername(String string) {
+		User u = userRepository.findByUsername(string).orElse(null);
+		return u;
+	}
+
+
+
+
+	public User save(User user) {
+		return userRepository.save(user);
+		
+	}
 }

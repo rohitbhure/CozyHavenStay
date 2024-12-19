@@ -1,111 +1,94 @@
 package com.hexaware.CozyHavenStay.model;
 
-import java.time.LocalDateTime;
-
-import org.hibernate.annotations.CreationTimestamp;
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long reviewId;
-    
+    private Long id;
+
     @ManyToOne
     @JoinColumn(name = "user_id")
-    @JsonBackReference
     private User user;
 
     @ManyToOne
     @JoinColumn(name = "hotel_id")
-    @JsonBackReference
+    @JsonIgnore
     private Hotel hotel;
 
-    private Double rating;
-
-    @Lob
-    private String comments;
-
-    @CreationTimestamp
-    private LocalDateTime createdAt;
-
     @Override
-	public String toString() {
-		return "Review [reviewId=" + reviewId + ", user=" + user + ", hotel=" + hotel + ", rating=" + rating
-				+ ", comments=" + comments + ", createdAt=" + createdAt + "]";
-	}
+    public String toString() {
+        return "Review [id=" + id + ", userId=" + (user != null ? user.getId() : "null") 
+                + ", hotelId=" + (hotel != null ? hotel.getId() : "null") 
+                + ", comment=" + comment + ", rating=" + rating + "]";
+    }
 
-	public Long getReviewId() {
-		return reviewId;
-	}
 
-	public void setReviewId(Long reviewId) {
-		this.reviewId = reviewId;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-	public Hotel getHotel() {
-		return hotel;
-	}
-
-	public void setHotel(Hotel hotel) {
-		this.hotel = hotel;
-	}
-
-	public Double getRating() {
-		return rating;
-	}
-
-	public void setRating(Double rating) {
-		this.rating = rating;
-	}
-
-	public String getComments() {
-		return comments;
-	}
-
-	public void setComments(String comments) {
-		this.comments = comments;
-	}
-
-	public LocalDateTime getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(LocalDateTime createdAt) {
-		this.createdAt = createdAt;
-	}
-
-	public Review(Long reviewId, User user, Hotel hotel, Double rating, String comments, LocalDateTime createdAt) {
+	public Review(Long id, User user, Hotel hotel, String comment, int rating) {
 		super();
-		this.reviewId = reviewId;
+		this.id = id;
 		this.user = user;
 		this.hotel = hotel;
+		this.comment = comment;
 		this.rating = rating;
-		this.comments = comments;
-		this.createdAt = createdAt;
 	}
-
-	public Review() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
 	
+	public Review() {
+		
+	}
+
+	private String comment;
+    private int rating; // Rating between 1 and 5
+
+    // Getters and Setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Hotel getHotel() {
+        return hotel;
+    }
+
+    public void setHotel(Hotel hotel) {
+        this.hotel = hotel;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
 }

@@ -1,28 +1,31 @@
 package com.hexaware.CozyHavenStay.repository;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.hexaware.CozyHavenStay.model.Booking;
+import com.hexaware.CozyHavenStay.model.User;
+
+
+
 
 @Repository
 public interface BookingRepository extends JpaRepository<Booking, Long> {
+	long countByBookingDate(LocalDate date);
+    List<Booking> findByUser(User user);
 
-    // Find bookings by user ID
-    List<Booking> findByUserUserId(Long userId);
+	List<Booking> findAllById(Long userId);
 
-    // Find bookings by hotel ID
-    List<Booking> findByHotelHotelId(Long hotelId);
+	List<Booking> findByUser_Id(Long userid);
 
-    // Custom query to find active bookings
-    @Query("SELECT b FROM Booking b WHERE b.bookingStatus = 'Booked'")
-    List<Booking> findActiveBookings();
-
-    // Native query to count total bookings in a hotel
-    @Query(value = "SELECT COUNT(*) FROM booking WHERE hotel_id = :hotelId", nativeQuery = true)
-    Long countBookingsByHotel(@Param("hotelId") Long hotelId);
+	public List<Booking> findByHotel_Id(Long hotelid);
+	int countByHotelId(Long hotelId);
+	int countByHotelIdAndDepartureDateAfter(Long hotelId, LocalDate now);
+	
+	
 }
+
+

@@ -1,48 +1,30 @@
-package com.hexaware.CozyHavenStay.model;
-
+package com.hexaware.CozyHavenStay.dto;
 
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.hexaware.CozyHavenStay.model.Booking;
+import com.hexaware.CozyHavenStay.model.Hotel;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 
-@Entity
-public class Room {
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-	@Column(name="room_type")
+public class RoomDTO {
+	private Long id;
     private String roomType; 
     private int maxOccupancy; 
     private double baseFare;
     private boolean isAC;
     @ElementCollection
     private List<String> features;
-    @ManyToOne
-    @JoinColumn(name = "hotel_id", nullable = false)
-    @JsonIgnore
+    
     private Hotel hotel;
     
-    @OneToMany(mappedBy = "room", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnore
+    
+
     private List<Booking> bookings = new ArrayList<>();
     
-    
-	public Room(Long id, String roomType, int maxOccupancy, double baseFare, boolean isAC, List<String> features,
+	public RoomDTO(Long id, String roomType, int maxOccupancy, double baseFare, boolean isAC, List<String> features,
 			Hotel hotel, List<Booking> bookings) {
 		super();
 		this.id = id;
@@ -102,17 +84,17 @@ public class Room {
 	public void setHotel(Hotel hotel) {
 		this.hotel = hotel;
 	}
-	
-	public Room() {
-		
-	}
-	
 	@Override
 	public String toString() {
-	    return "Room [id=" + id + ", roomType=" + roomType + ", maxOccupancy=" + maxOccupancy + ", baseFare=" + baseFare
-	            + ", isAC=" + isAC + ", features=" + features + ", hotelId=" + (hotel != null ? hotel.getId() : "N/A")
+	    return "RoomDTO [id=" + id + ", roomType=" + roomType + ", maxOccupancy=" + maxOccupancy + ", baseFare=" 
+	            + baseFare + ", isAC=" + isAC + ", features=" + features + ", hotelId=" + hotel.getId() 
 	            + ", bookingsCount=" + (bookings != null ? bookings.size() : 0) + "]";
 	}
 
+	
+	public RoomDTO() {
+		
+	}
+    
     
 }

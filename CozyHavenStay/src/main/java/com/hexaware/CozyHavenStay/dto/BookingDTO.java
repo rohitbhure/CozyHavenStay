@@ -1,22 +1,13 @@
-package com.hexaware.CozyHavenStay.model;
+package com.hexaware.CozyHavenStay.dto;
 
-
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
 import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 
-@Entity
-public class Booking {
+public class BookingDTO {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,37 +18,7 @@ public class Booking {
 
     private String phoneNo;
 
-    public Booking(Long id, String name, String email, String phoneNo, String aadharImg, int noOfRooms, int noOfAdults,
-			int noOfChildren, LocalDate arrivalDate, LocalDate departureDate, double totalBill, LocalDate bookingDate,
-			Hotel hotel, Room room, User user, String roomType) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.email = email;
-		this.phoneNo = phoneNo;
-		this.aadharImg = aadharImg;
-		this.noOfRooms = noOfRooms;
-		this.noOfAdults = noOfAdults;
-		this.noOfChildren = noOfChildren;
-		this.arrivalDate = arrivalDate;
-		this.departureDate = departureDate;
-		this.totalBill = totalBill;
-		this.bookingDate = bookingDate;
-		this.hotel = hotel;
-		this.room = room;
-		this.user = user;
-		this.roomType = roomType;
-	}
-
-	public LocalDate getBookingDate() {
-		return bookingDate;
-	}
-
-	public void setBookingDate(LocalDate bookingDate) {
-		this.bookingDate = bookingDate;
-	}
-
-	private String aadharImg;
+    private String aadharImg;
 
     private int noOfRooms;
 
@@ -71,33 +32,79 @@ public class Booking {
 
     private double totalBill;
     
-    @Column(name = "booking_date", nullable = false)
-    private LocalDate bookingDate;
-
-    @ManyToOne
-    @JoinColumn(name = "hotel_id")
-    
-    private Hotel hotel;
-
-    @ManyToOne
-    @JoinColumn(name = "room_id")
-    
-    private Room room;
-    
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
-
-
-	public User getUser() {
-		return user;
+    public BookingDTO(Long id, String name, String email, String phoneNo, String aadharImg, int noOfRooms,
+			int noOfAdults, int noOfChildren, LocalDate arrivalDate, LocalDate departureDate, double totalBill,
+			LocalDate bookingDate, Long hotelId, Long roomId, Long userId, String roomType) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.phoneNo = phoneNo;
+		this.aadharImg = aadharImg;
+		this.noOfRooms = noOfRooms;
+		this.noOfAdults = noOfAdults;
+		this.noOfChildren = noOfChildren;
+		this.arrivalDate = arrivalDate;
+		this.departureDate = departureDate;
+		this.totalBill = totalBill;
+		this.bookingDate = bookingDate;
+		this.hotelId = hotelId;
+		this.roomId = roomId;
+		this.userId = userId;
+		this.roomType = roomType;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public LocalDate getBookingDate() {
+		return bookingDate;
+	}
+
+	public void setBookingDate(LocalDate bookingDate) {
+		this.bookingDate = bookingDate;
+	}
+
+	@Column(name = "booking_date", nullable = false)
+    private LocalDate bookingDate;
+
+    private Long hotelId; // Only ID
+    
+    private Long roomId;  // Only ID
+    private Long userId;  // Only ID
+
+
+	public Long getHotelId() {
+		return hotelId;
+	}
+
+	public void setHotelId(Long hotelId) {
+		this.hotelId = hotelId;
+	}
+
+	public Long getRoomId() {
+		return roomId;
+	}
+
+	public void setRoomId(Long roomId) {
+		this.roomId = roomId;
+	}
+
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 
 	private String roomType;
+    
+
+
+
+
+	public BookingDTO() {
+    	
+    }
+
 
 	public Long getId() {
 		return id;
@@ -187,21 +194,7 @@ public class Booking {
 		this.totalBill = totalBill;
 	}
 
-	public Hotel getHotel() {
-		return hotel;
-	}
-
-	public void setHotel(Hotel hotel) {
-		this.hotel = hotel;
-	}
-
-	public Room getRoom() {
-		return room;
-	}
-
-	public void setRoom(Room room) {
-		this.room = room;
-	}
+	
 
 	public String getRoomType() {
 		return roomType;
@@ -213,18 +206,16 @@ public class Booking {
 
 	@Override
 	public String toString() {
-		return "Booking [id=" + id + ", name=" + name + ", email=" + email + ", phoneNo=" + phoneNo + ", aadharImg="
+		return "BookingDTO [id=" + id + ", name=" + name + ", email=" + email + ", phoneNo=" + phoneNo + ", aadharImg="
 				+ aadharImg + ", noOfRooms=" + noOfRooms + ", noOfAdults=" + noOfAdults + ", noOfChildren="
 				+ noOfChildren + ", arrivalDate=" + arrivalDate + ", departureDate=" + departureDate + ", totalBill="
-				+ totalBill + ", bookingDate=" + bookingDate + ", hotel=" + hotel + ", room=" + room + ", user=" + user
-				+ ", roomType=" + roomType + "]";
+				+ totalBill + ", bookingDate=" + bookingDate + ", hotelId=" + hotelId + ", roomId=" + roomId
+				+ ", userId=" + userId + ", roomType=" + roomType + "]";
 	}
 
 	
-	public Booking() {
-		
-	}
+	
+    
+    
 
-    
-    
 }

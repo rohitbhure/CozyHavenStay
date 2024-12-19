@@ -5,53 +5,66 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.hexaware.CozyHavenStay.dto.ReviewRequestDTO;
-import com.hexaware.CozyHavenStay.exception.ResourceNotFoundException;
-import com.hexaware.CozyHavenStay.mapper.ReviewMapper;
-import com.hexaware.CozyHavenStay.model.Hotel;
 import com.hexaware.CozyHavenStay.model.Review;
-import com.hexaware.CozyHavenStay.model.User;
-import com.hexaware.CozyHavenStay.repository.HotelRepository;
 import com.hexaware.CozyHavenStay.repository.ReviewRepository;
-import com.hexaware.CozyHavenStay.repository.UserRepository;
 
 @Service
-public class ReviewServiceImpl implements ReviewService {
+public class ReviewServiceImpl {
+	
+	@Autowired
+	ReviewRepository reviewrep;
 
-    @Autowired
-    private ReviewRepository reviewRepository;
+	public Review savereview(Review review2) {
+		System.out.println(review2);
+		Review review = reviewrep.save(review2);
+		return review;
+	}
 
-    @Autowired
-    private UserRepository userRepository;
+	public Review getreviewbyid(Long reviewid) {
+		Review review=reviewrep.findById(reviewid).orElse(null);
+		return review;
+	}
 
-    @Autowired
-    private HotelRepository hotelRepository;
+	public Review updatereview(Long reviewid, Review rev2) {
+		Review review=reviewrep.findById(reviewid).orElse(null);
+		if(review!=null) {
+			review.setComment(rev2.getComment());
+			review.setHotel(rev2.getHotel());
+			review.setRating(rev2.getRating());
+			review.setUser(rev2.getUser());
+			reviewrep.save(review);
+			return review;
+		}
+		else
+		return null;
+	}
 
-    @Autowired
-    private ReviewMapper reviewMapper;
+	public String deletereview(Long reviewid) {
+		Review review=reviewrep.findById(reviewid).orElse(null);
+		if(review!=null)
+		{
+			reviewrep.delete(review);
+			return "Deleted";
+		}
+		else {
+			return "Not Found";
+		}
+		
+	}
 
-    @Override
-    public Review addReview(ReviewRequestDTO reviewRequestDTO) {
-        User user = userRepository.findById(reviewRequestDTO.getUserId())
-                .orElseThrow(() -> new ResourceNotFoundException("User not found with ID: " + reviewRequestDTO.getUserId()));
+	public List<Review> getallreviews() {
+		List<Review> li= reviewrep.findAll();
+		return li;
+	}
 
-        Hotel hotel = hotelRepository.findById(reviewRequestDTO.getHotelId())
-                .orElseThrow(() -> new ResourceNotFoundException("Hotel not found with ID: " + reviewRequestDTO.getHotelId()));
+	public List<Review> getreviewbyhotelid(Long hotelid) {
+		List<Review> review=reviewrep.findByHotel_Id(hotelid);
+		return review;
+	}
 
-        Review review = reviewMapper.toEntity(reviewRequestDTO);
-        review.setUser(user); // Ensure user is explicitly set
-        review.setHotel(hotel); // Ensure hotel is explicitly set
+	public List<Review> getreviewbyuserid(Long userid) {
+		List<Review> review=reviewrep.findByUser_Id(userid);
+		return review;
+	}
 
-        return reviewRepository.save(review);
-    }
-
-    @Override
-    public List<Review> getReviewsByHotel(Long hotelId) {
-        return reviewRepository.findByHotelHotelId(hotelId);
-    }
-
-    @Override
-    public List<Review> getReviewsByUser(Long userId) {
-        return reviewRepository.findByUserUserId(userId);
-    }
 }

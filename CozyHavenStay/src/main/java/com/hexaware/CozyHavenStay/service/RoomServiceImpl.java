@@ -1,59 +1,66 @@
 package com.hexaware.CozyHavenStay.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.hexaware.CozyHavenStay.dto.RoomRequestDTO;
-import com.hexaware.CozyHavenStay.exception.ResourceNotFoundException;
-import com.hexaware.CozyHavenStay.mapper.RoomMapper;
-import com.hexaware.CozyHavenStay.model.Hotel;
 import com.hexaware.CozyHavenStay.model.Room;
-import com.hexaware.CozyHavenStay.repository.HotelRepository;
 import com.hexaware.CozyHavenStay.repository.RoomRepository;
 
 @Service
-public class RoomServiceImpl implements RoomService {
+public class RoomServiceImpl {
 
     @Autowired
     private RoomRepository roomRepository;
 
-    @Autowired
-    private HotelRepository hotelRepository;
+    public Room createRoom(Room room) {
+    	
 
-    @Autowired
-    private RoomMapper roomMapper;
-
-    @Override
-    public Room addRoom(RoomRequestDTO roomRequestDTO, Long hotelId) {
-        Hotel hotel = hotelRepository.findById(hotelId)
-                .orElseThrow(() -> new ResourceNotFoundException("Hotel not found with ID: " + hotelId));
-        Room room = roomMapper.toEntity(roomRequestDTO, hotelId);
         return roomRepository.save(room);
     }
 
-    @Override
-    public Room getRoomById(Long roomId, Long hotelId) {
-        return roomRepository.findById(roomId)
-                .filter(room -> room.getHotel().getHotelId().equals(hotelId))
-                .orElseThrow(() -> new ResourceNotFoundException("Room not found with ID: " + roomId + " for Hotel ID: " + hotelId));
+    public Optional<Room> getRoomById(Long id) {
+        return roomRepository.findById(id);
     }
 
-    @Override
-    public List<Room> getRoomsByHotel(Long hotelId) {
-        return roomRepository.findByHotelHotelId(hotelId);
+    public Room updateRoom(Long id, Room roomDetails) {
+        Room room = roomRepository.findById(id).orElse(null);
+
+        // Check if hotel is null and throw an exception or handle accordingly
+        if (roomDetails.getHotel() == null || roomDetails.getHotel().getId() == null) {
+            throw new IllegalArgumentException("Hotel information must be provided.");
+        }
+
+        // Set the new values
+        room.setAC(roomDetails.isAC());
+        room.setRoomType(roomDetails.getRoomType());
+        room.setBaseFare(roomDetails.getBaseFare());
+        room.setMaxOccupancy(roomDetails.getMaxOccupancy());
+        room.setHotel(roomDetails.getHotel());  // Ensure the hotel is correctly set
+        room.setFeatures(roomDetails.getFeatures());
+
+        // Save the updated room
+        return roomRepository.save(room);
     }
 
-    @Override
-    public Room updateRoom(Long roomId, RoomRequestDTO roomRequestDTO, Long hotelId) {
-        Room existingRoom = getRoomById(roomId, hotelId);
-        roomMapper.updateEntity(existingRoom, roomRequestDTO);
-        return roomRepository.save(existingRoom);
+
+    public String deleteRoom(Long id) {
+    	Room room = roomRepository.findById(id).orElse(null);
+    	if(room!=null) {
+        roomRepository.deleteById(id);
+    	return "Deleted";
+    	}
+    	else {
+			return "Not Found";
+    	
+		}
     }
 
-    @Override
-    public void deleteRoom(Long roomId) {
-        roomRepository.deleteById(roomId);
+    public List<Room> getAllRooms() {
+        return roomRepository.findAll();
     }
+
+	
 }

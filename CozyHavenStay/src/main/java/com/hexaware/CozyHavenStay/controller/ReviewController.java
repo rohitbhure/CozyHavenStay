@@ -2,44 +2,119 @@ package com.hexaware.CozyHavenStay.controller;
 
 import java.util.List;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hexaware.CozyHavenStay.dto.ReviewRequestDTO;
+import com.hexaware.CozyHavenStay.dto.ReviewDTO;
+import com.hexaware.CozyHavenStay.exception.ReviewNotFoundException;
+import com.hexaware.CozyHavenStay.model.Hotel;
 import com.hexaware.CozyHavenStay.model.Review;
-import com.hexaware.CozyHavenStay.service.ReviewService;
+import com.hexaware.CozyHavenStay.service.HotelServiceImpl;
+import com.hexaware.CozyHavenStay.service.ReviewServiceImpl;
 
-import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/reviews")
 public class ReviewController {
-
-    @Autowired
-    private ReviewService reviewService;
-
-    @PostMapping
-    public ResponseEntity<Review> addReview(@Valid @RequestBody ReviewRequestDTO reviewRequestDTO) {
-        Review review = reviewService.addReview(reviewRequestDTO);
-        return ResponseEntity.status(HttpStatus.CREATED).body(review);
-    }
-
-    @GetMapping("/hotel/{hotelId}")
-    public ResponseEntity<List<Review>> getReviewsByHotel(@PathVariable Long hotelId) {
-        List<Review> reviews = reviewService.getReviewsByHotel(hotelId);
-        return ResponseEntity.ok(reviews);
-    }
-
-    @GetMapping("/user/{userId}")
-    public ResponseEntity<List<Review>> getReviewsByUser(@PathVariable Long userId) {
-        List<Review> reviews = reviewService.getReviewsByUser(userId);
-        return ResponseEntity.ok(reviews);
-    }
+	
+	@Autowired
+	ReviewServiceImpl reviewService;
+	
+	@Autowired
+	HotelServiceImpl hotelService;
+	
+	@Autowired
+	ModelMapper mp;
+	
+	@PostMapping("/createreview")
+	public ResponseEntity<ReviewDTO> writereview(@RequestBody ReviewDTO review){
+		Hotel hotel = hotelService.getHotelById(review.getHotel().getId());
+	    review.setHotel(hotel);
+		Review review2=mp.map(review, Review.class);
+		Review review3=reviewService.savereview(review2);
+		ReviewDTO review4=mp.map(review3, ReviewDTO.class);
+		return new ResponseEntity<ReviewDTO>(review4,HttpStatus.CREATED);
+	}
+	
+	@GetMapping("/getreviewbyid/{reviewid}")
+	public ResponseEntity<ReviewDTO> getreview(@PathVariable Long reviewid) throws ReviewNotFoundException{
+		Review review=reviewService.getreviewbyid(reviewid);
+		if(review!=null)
+		{
+			ReviewDTO rev=mp.map(review, ReviewDTO.class);
+			return new ResponseEntity<ReviewDTO>(rev,HttpStatus.OK);
+			
+		}
+		else {
+			throw new ReviewNotFoundException("No Review Exists with mentioned id");
+		}
+	}
+	
+	@PutMapping("/updatereviewbyid/{reviewid}")
+	public ResponseEntity<ReviewDTO> updatereview(@PathVariable Long reviewid,@RequestBody ReviewDTO rev) throws ReviewNotFoundException{
+		Review rev2=mp.map(rev, Review.class);
+		Review rev3=reviewService.updatereview(reviewid,rev2);
+		if(rev3!=null)
+		{
+			ReviewDTO rev4=mp.map(rev3, ReviewDTO.class);
+			return new ResponseEntity<ReviewDTO>(rev4,HttpStatus.OK);
+			
+		}
+		else {
+			throw new ReviewNotFoundException("No Review Exists with mentioned id");
+		}
+	}
+	
+	@DeleteMapping("/deletereviewbyid/{reviewid}")
+	public ResponseEntity<String> deletereview(@PathVariable Long reviewid){
+		String str = reviewService.deletereview(reviewid);
+		if(str.equals("Deleted"))
+			return new ResponseEntity<String>(str,HttpStatus.OK);
+		else {
+			return new ResponseEntity<String>(str,HttpStatus.NOT_FOUND);
+		}
+	}
+	
+	@GetMapping("/getallreviews")
+	public ResponseEntity<List<ReviewDTO>> getall(){
+		List<Review> li=reviewService.getallreviews();
+		if(li.isEmpty())
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		else {
+			List<ReviewDTO> li2=li.stream().map((temp)->mp.map(temp, ReviewDTO.class)).toList();
+			return new ResponseEntity<List<ReviewDTO>>(li2,HttpStatus.OK);
+		}
+	}
+	
+	@GetMapping("/getreviewbyhotelid/{hotelid}")
+	public ResponseEntity<List<ReviewDTO>> getreviewhotel(@PathVariable Long hotelid) throws ReviewNotFoundException{
+		List<Review> li=reviewService.getreviewbyhotelid(hotelid);
+		if(li.isEmpty())
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		else {
+			List<ReviewDTO> li2=li.stream().map((temp)->mp.map(temp, ReviewDTO.class)).toList();
+			return new ResponseEntity<List<ReviewDTO>>(li2,HttpStatus.OK);
+		}
+	}
+	
+	@GetMapping("/getreviewbyuserid/{userid}")
+	public ResponseEntity<List<ReviewDTO>> getreviewuser(@PathVariable Long userid) throws ReviewNotFoundException{
+		List<Review> li=reviewService.getreviewbyuserid(userid);
+		if(li.isEmpty())
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		else {
+			List<ReviewDTO> li2=li.stream().map((temp)->mp.map(temp, ReviewDTO.class)).toList();
+			return new ResponseEntity<List<ReviewDTO>>(li2,HttpStatus.OK);
+		}
+	}
 }

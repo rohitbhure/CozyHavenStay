@@ -5,107 +5,77 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.hexaware.CozyHavenStay.dto.BookingRequestDTO;
-import com.hexaware.CozyHavenStay.exception.ResourceNotFoundException;
-import com.hexaware.CozyHavenStay.mapper.BookingMapper;
 import com.hexaware.CozyHavenStay.model.Booking;
-import com.hexaware.CozyHavenStay.model.Hotel;
-import com.hexaware.CozyHavenStay.model.Room;
-import com.hexaware.CozyHavenStay.model.User;
 import com.hexaware.CozyHavenStay.repository.BookingRepository;
-import com.hexaware.CozyHavenStay.repository.HotelRepository;
-import com.hexaware.CozyHavenStay.repository.RoomRepository;
 import com.hexaware.CozyHavenStay.repository.UserRepository;
 
 @Service
-public class BookingServiceImpl implements BookingService {
+public class BookingServiceImpl {
 
     @Autowired
     private BookingRepository bookingRepository;
-
     @Autowired
     private UserRepository userRepository;
 
-    @Autowired
-    private HotelRepository hotelRepository;
-
-    @Autowired
-    private RoomRepository roomRepository;
-
-    @Autowired
-    private BookingMapper bookingMapper;
-
-    @Override
-    public Booking createBooking(BookingRequestDTO bookingRequestDTO) {
-        Booking booking = bookingMapper.toEntity(bookingRequestDTO);
+    public Booking createBooking(Booking booking) {
+    	
         return bookingRepository.save(booking);
+    	
     }
 
-    @Override
-    public Booking getBookingById(Long bookingId) {
-        return bookingRepository.findById(bookingId)
-                .orElseThrow(() -> new ResourceNotFoundException("Booking not found with ID: " + bookingId));
+    public Booking getBookingById(Long id) {
+        return bookingRepository.findById(id).orElse(null);
     }
 
-    @Override
+    public Booking updateBooking(Long id, Booking bookingDetails) {
+        Booking booking = bookingRepository.findById(id).orElse(null);
+        if(booking!=null) {
+        booking.setAadharImg(bookingDetails.getAadharImg());
+        booking.setArrivalDate(bookingDetails.getArrivalDate());
+        booking.setDepartureDate(bookingDetails.getDepartureDate());
+        booking.setEmail(bookingDetails.getEmail());
+        booking.setHotel(bookingDetails.getHotel());
+        booking.setName(bookingDetails.getName());
+        booking.setNoOfAdults(bookingDetails.getNoOfAdults());
+        booking.setNoOfChildren(booking.getNoOfChildren());
+        booking.setNoOfRooms(bookingDetails.getNoOfRooms());
+        booking.setPhoneNo(bookingDetails.getPhoneNo());
+        booking.setRoom(bookingDetails.getRoom());
+        booking.setRoomType(bookingDetails.getRoomType());
+        booking.setTotalBill(bookingDetails.getTotalBill());
+        booking.setUser(bookingDetails.getUser());
+        return bookingRepository.save(booking);
+        }
+        else {
+			return null;
+		}
+    }
+
+    public String deleteBooking(Long id) {
+    	Booking booking = bookingRepository.findById(id).orElse(null);
+        if(booking!=null) {
+        	bookingRepository.deleteById(id);
+        	return "Deleted";
+        }
+        else {
+			return "Not Found";
+		}
+    }
+
     public List<Booking> getAllBookings() {
-        return bookingRepository.findAll();
+        List<Booking> li= bookingRepository.findAll();
+        return li;
     }
 
-    @Override
-    public List<Booking> getBookingsByUser(Long userId) {
-        return bookingRepository.findByUserUserId(userId);
-    }
+	public List<Booking> getBookingByUserId(Long userid) {
+		List<Booking> booking = bookingRepository.findByUser_Id(userid);
+		return booking;
+	}
 
-    @Override
-    public List<Booking> getBookingsByHotel(Long hotelId) {
-        return bookingRepository.findByHotelHotelId(hotelId);
-    }
-
-    @Override
-    public Booking updateBooking(Long bookingId, BookingRequestDTO bookingRequestDTO) {
-        // Fetch the existing booking
-        Booking existingBooking = getBookingById(bookingId);
-
-        // Update fields from DTO
-        if (bookingRequestDTO.getUserId() != null) {
-            User user = userRepository.findById(bookingRequestDTO.getUserId())
-                    .orElseThrow(() -> new ResourceNotFoundException("User not found with ID: " + bookingRequestDTO.getUserId()));
-            existingBooking.setUser(user);
-        }
-
-        if (bookingRequestDTO.getHotelId() != null) {
-            Hotel hotel = hotelRepository.findById(bookingRequestDTO.getHotelId())
-                    .orElseThrow(() -> new ResourceNotFoundException("Hotel not found with ID: " + bookingRequestDTO.getHotelId()));
-            existingBooking.setHotel(hotel);
-        }
-
-        if (bookingRequestDTO.getRoomId() != null) {
-            Room room = roomRepository.findById(bookingRequestDTO.getRoomId())
-                    .orElseThrow(() -> new ResourceNotFoundException("Room not found with ID: " + bookingRequestDTO.getRoomId()));
-            existingBooking.setRoom(room);
-        }
-
-        if (bookingRequestDTO.getCheckInDate() != null) {
-            existingBooking.setCheckInDate(bookingRequestDTO.getCheckInDate());
-        }
-
-        if (bookingRequestDTO.getCheckOutDate() != null) {
-            existingBooking.setCheckOutDate(bookingRequestDTO.getCheckOutDate());
-        }
-
-        if (bookingRequestDTO.getBookingStatus() != null) {
-            existingBooking.setBookingStatus(bookingRequestDTO.getBookingStatus());
-        }
-
-        // Save updated booking
-        return bookingRepository.save(existingBooking);
-    }
-
-    @Override
-    public void cancelBooking(Long bookingId) {
-        Booking booking = getBookingById(bookingId);
-        booking.setBookingStatus("Cancelled");
-        bookingRepository.save(booking);
-    }
+	
+	  public List<Booking> getBookingByHotelId(Long hotelid) { 
+		  List<Booking> list=bookingRepository.findByHotel_Id(hotelid); 
+		  return list;
+	  }
+	 
 }
