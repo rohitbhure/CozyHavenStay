@@ -2,51 +2,47 @@ package com.hexaware.CozyHavenStay.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import com.hexaware.CozyHavenStay.dto.PaymentDTO;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.hexaware.CozyHavenStay.dto.PaymentRequestDTO;
+import com.hexaware.CozyHavenStay.dto.PaymentResponseDTO;
 import com.hexaware.CozyHavenStay.model.Payment;
 import com.hexaware.CozyHavenStay.service.PaymentService;
 
-import java.util.HashMap;
-import java.util.Map;
-
 @RestController
 @RequestMapping("/api/payments")
+@CrossOrigin(origins = "http://localhost:3000")
 public class PaymentController {
 
     @Autowired
     private PaymentService paymentService;
 
-    @PostMapping("/booking/{bookingId}")
-    public ResponseEntity<Map<String, Object>> createPayment(@PathVariable Long bookingId, @RequestBody PaymentDTO paymentDTO) {
+    @PostMapping("/create")
+    public ResponseEntity<PaymentResponseDTO> createPayment(@RequestBody PaymentRequestDTO paymentRequest) {
+        // Convert DTO to entity
         Payment payment = new Payment();
-        payment.setTransactionId(paymentDTO.getTransactionId());
-        payment.setAmount(paymentDTO.getAmount());
-        payment.setPaymentMethod(paymentDTO.getPaymentMethod());
+        payment.setBookingId(paymentRequest.getBookingId());
+        payment.setAmount(paymentRequest.getAmount());
+        payment.setPaymentMethod(paymentRequest.getPaymentMethod());
+        payment.setTransaction_id(paymentRequest.getTransaction_id());
 
-        Payment savedPayment = paymentService.createPayment(bookingId, payment);
+        // Save payment
+        Payment createdPayment = paymentService.createPayment(payment);
 
-        Map<String, Object> response = new HashMap<>();
-        response.put("transactionId", savedPayment.getTransactionId());
-        response.put("amount", savedPayment.getAmount());
-        response.put("paymentDate", savedPayment.getPaymentDate());
-        response.put("message", "Payment successfully processed.");
+        // Convert entity to DTO
+        PaymentResponseDTO response = new PaymentResponseDTO();
+        response.setId(createdPayment.getId());
+        response.setBookingId(createdPayment.getBookingId());
+        response.setAmount(createdPayment.getAmount());
+        response.setPaymentMethod(createdPayment.getPaymentMethod());
+        response.setPaymentDate(createdPayment.getPaymentDate());
+        response.setTransaction_id(paymentRequest.getTransaction_id());
+
 
         return ResponseEntity.ok(response);
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<PaymentDTO> getPaymentById(@PathVariable Long id) {
-        Payment payment = paymentService.getPaymentById(id);
-        PaymentDTO paymentDTO = new PaymentDTO(
-                payment.getId(),
-                payment.getTransactionId(),
-                payment.getAmount(),
-                payment.getPaymentMethod(),
-                payment.getPaymentDate(),
-                payment.getBooking().getId()
-        );
-
-        return ResponseEntity.ok(paymentDTO);
     }
 }

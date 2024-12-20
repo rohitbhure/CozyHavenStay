@@ -1,23 +1,15 @@
-package com.hexaware.CozyHavenStay.model;
+package com.hexaware.CozyHavenStay.dto;
 
-import jakarta.persistence.*;
 import java.util.Date;
 
-@Entity
-public class Payment {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class PaymentResponseDTO {
     private Long id;
-
-    @Column(nullable = false)
     private Long bookingId;
-    
-    @Column(nullable = false)
+    private Double amount;
+    private String paymentMethod;
+    private Date paymentDate;
     private String transaction_id;
 
-
-    @Column(nullable = false)
-    private Double amount;
 
     public String getTransaction_id() {
 		return transaction_id;
@@ -27,14 +19,7 @@ public class Payment {
 		this.transaction_id = transaction_id;
 	}
 
-	@Column(nullable = false)
-    private String paymentMethod;
-
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date paymentDate;
-
-    // Getters and Setters
+	// Getters and Setters
     public Long getId() {
         return id;
     }
@@ -66,6 +51,8 @@ public class Payment {
     public void setPaymentMethod(String paymentMethod) {
         this.paymentMethod = paymentMethod;
     }
+
+    
 
     public Date getPaymentDate() {
         return paymentDate;

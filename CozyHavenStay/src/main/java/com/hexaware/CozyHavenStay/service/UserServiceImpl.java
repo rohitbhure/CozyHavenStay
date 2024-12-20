@@ -15,16 +15,18 @@ import com.hexaware.CozyHavenStay.repository.UserRepository;
 
 @Service
 public class UserServiceImpl {
-    
-    @Autowired
+	
+	
+	@Autowired
     private PasswordEncoder passwordEncoder;
-    
+	
     @Autowired
     private UserRepository userRepository;  
     
     @Autowired
     private HotelOwnerRepository hotelOwnerRepository;  
 
+    
     public User registerUser(User user) {
     	User user1 = userRepository.save(user);
     	if (user1.getRole() == Roles.HOTEL_OWNER) {
@@ -35,69 +37,82 @@ public class UserServiceImpl {
         return user1;
     }
 
+    
+    
+
     // Find a user by their ID
     public Optional<User> findById(Long id) {
         return userRepository.findById(id);
     }
 
+    
     public User updateUser(Long id, User userDetails) {
         User existingUser = userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
-        
-        // Update the user details
         existingUser.setName(userDetails.getName());
+        
         existingUser.setEmail(userDetails.getEmail());
         existingUser.setUsername(userDetails.getUsername());
-
-        // Update the optional fields (newly added fields)
-        if (userDetails.getGender() != null) {
-            existingUser.setGender(userDetails.getGender());
+        if(userDetails.getPassword()!=null) {
+        //System.out.println(userDetails.getPassword());
+        userDetails.setPassword(encodePassword(userDetails.getPassword()));
+        //System.out.println(userDetails.getPassword());
+        existingUser.setPassword(userDetails.getPassword());
         }
-        if (userDetails.getDateOfBirth() != null) {
-            existingUser.setDateOfBirth(userDetails.getDateOfBirth());
-        }
-        if (userDetails.getProfilePicture() != null) {
-            existingUser.setProfilePicture(userDetails.getProfilePicture());
-        }
-
-        // Update password only if not null
-        if (userDetails.getPassword() != null) {
-            existingUser.setPassword(encodePassword(userDetails.getPassword()));
-        }
-
-        // Save the updated user
+        
+        
         return userRepository.save(existingUser);
     }
 
+    
     public String deleteUser(Long id) {
-        User u = userRepository.findById(id).orElse(null);
-        if (u != null) {
-            userRepository.deleteById(id);
-            return "Deleted";
-        } else {
-            return "Not Found";
-        }
+    	User u= userRepository.findById(id).orElse(null);
+    	if(u!=null) {
+        userRepository.deleteById(id);
+		return "Deleted";
+    	}
+    	else {
+			return "Not Found";
+		}
     }
 
-    public List<User> showall() {
-        return userRepository.findAll();
-    }
 
-    public List<User> getUsersByRole(Roles role) {
-        return userRepository.findByRole(role);
-    }
 
-    public String encodePassword(String password) {
+
+	public List<User> showall() {
+		List<User> user=userRepository.findAll();
+		return user;
+		
+	}
+
+
+
+
+	public List<User> getUsersByRole(Roles role) {
+		List<User> li=userRepository.findByRole(role);
+		return li;
+	}
+
+
+
+
+	public String encodePassword(String password) {
         // Encrypt the password using BCryptPasswordEncoder
         return passwordEncoder.encode(password);
     }
 
-    public User findByUsername(String username) {
-        return userRepository.findByUsername(username).orElse(null);
-    }
 
-    public User save(User user) {
-        // Encrypting the password before saving the user
-        user.setPassword(encodePassword(user.getPassword()));
-        return userRepository.save(user);
-    }
+
+
+	public User findByUsername(String string) {
+		User u = userRepository.findByUsername(string).orElse(null);
+		return u;
+	}
+
+
+
+
+	public User save(User user) {
+		return userRepository.save(user);
+		
+	}
 }
