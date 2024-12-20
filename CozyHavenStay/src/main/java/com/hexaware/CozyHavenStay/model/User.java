@@ -14,6 +14,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.OneToMany;
 
 @Entity
@@ -37,6 +38,7 @@ public class User {
     // New fields
     private String gender; // Gender (e.g., "Male", "Female", "Other")
     private Date dateOfBirth; // Date of Birth
+    @Lob
     private byte[] profilePicture; // Profile picture as a byte array
 
     // Constructor
@@ -139,4 +141,12 @@ public class User {
                 + password + ", role=" + role + ", bookings=" + (bookings != null ? bookings.size() : 0) 
                 + ", gender=" + gender + ", dateOfBirth=" + dateOfBirth + "]";
     }
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 }

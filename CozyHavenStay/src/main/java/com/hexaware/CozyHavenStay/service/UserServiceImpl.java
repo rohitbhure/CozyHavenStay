@@ -26,13 +26,8 @@ public class UserServiceImpl {
     private HotelOwnerRepository hotelOwnerRepository;  
 
     public User registerUser(User user) {
-        // Encoding the password before saving
-        user.setPassword(encodePassword(user.getPassword()));
-        
-        // Saving the user and checking for role
-        User user1 = userRepository.save(user);
-        
-        if (user1.getRole() == Roles.HOTEL_OWNER) {
+    	User user1 = userRepository.save(user);
+    	if (user1.getRole() == Roles.HOTEL_OWNER) {
             HotelOwner hotelOwner = new HotelOwner();
             hotelOwner.setUser(user1);
             hotelOwnerRepository.save(hotelOwner);
@@ -49,7 +44,7 @@ public class UserServiceImpl {
         User existingUser = userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
         
         // Update the user details
-        existingUser.setUsername(userDetails.getUsername());
+        existingUser.setName(userDetails.getName());
         existingUser.setEmail(userDetails.getEmail());
         existingUser.setUsername(userDetails.getUsername());
 

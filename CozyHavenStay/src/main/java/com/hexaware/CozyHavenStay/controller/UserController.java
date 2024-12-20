@@ -1,12 +1,15 @@
 package com.hexaware.CozyHavenStay.controller;
 
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -50,13 +53,27 @@ public class UserController {
     	return new ResponseEntity<List<UserDTO>>(users,HttpStatus.OK);
     }
 
+    
     @PostMapping("/register")
     public ResponseEntity<User> registerUser(@RequestBody UserDTO user) {
+        // Map UserDTO to User entity
         User user1 = mp.map(user, User.class);
+
+        // Set profile picture if provided
+        if (user.getProfilePicture() != null && user.getProfilePicture().length > 0) {
+            user1.setProfilePicture(user.getProfilePicture());
+        }
+
+        // Encode the password
         user1.setPassword(userService.encodePassword(user1.getPassword()));
+
+        // Save the user
         User user2 = userService.registerUser(user1);
+
+        // Return the response
         return new ResponseEntity<>(user2, HttpStatus.CREATED);
     }
+
 
     @GetMapping("/getuser/{id}")
     public ResponseEntity<UserDTO> getUser(@PathVariable Long id) throws UserNotFoundException {
@@ -151,13 +168,16 @@ public class UserController {
     }
 
     @GetMapping("/getProfileImage/{id}")
+   
     public ResponseEntity<byte[]> getProfileImage(@PathVariable Long id) {
         try {
             User user = userService.findById(id).orElseThrow(() -> new UserNotFoundException("User not found"));
             byte[] profileImage = user.getProfilePicture();
 
             if (profileImage != null) {
-                return new ResponseEntity<>(profileImage, HttpStatus.OK);
+                HttpHeaders headers = new HttpHeaders();
+                headers.setContentType(MediaType.IMAGE_PNG); // Change to IMAGE_PNG if the image is PNG
+                return new ResponseEntity<>(profileImage, headers, HttpStatus.OK);
             } else {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT); // No image found
             }
@@ -165,4 +185,5 @@ public class UserController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
 }

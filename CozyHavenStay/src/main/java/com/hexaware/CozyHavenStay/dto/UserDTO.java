@@ -4,6 +4,8 @@ import java.util.Date;
 
 import com.hexaware.CozyHavenStay.Enum.Roles;
 
+import jakarta.persistence.Lob;
+
 public class UserDTO {
     private Long id;
     
@@ -18,11 +20,12 @@ public class UserDTO {
     // New fields for UserDTO
     private String gender; // Gender (e.g., "Male", "Female", "Other")
     private Date dateOfBirth; // Date of Birth
-    private String profilePictureUrl; // URL of profile picture (or you can use byte[] if you want image data)
+    @Lob
+    private byte[] profilePicture; // URL of profile picture (or you can use byte[] if you want image data)
 
     // Constructor with new fields
     public UserDTO(Long id, String name, String username, String email, String password, Roles role, 
-                   String gender, Date dateOfBirth, String profilePictureUrl) {
+                   String gender, Date dateOfBirth, byte[] profilePicture) {
         super();
         this.id = id;
         this.name = name;
@@ -32,7 +35,7 @@ public class UserDTO {
         this.role = role;
         this.gender = gender;
         this.dateOfBirth = dateOfBirth;
-        this.profilePictureUrl = profilePictureUrl;
+        this.profilePicture = profilePicture;
     }
 
     // Getters and Setters for the new fields
@@ -52,20 +55,28 @@ public class UserDTO {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public String getProfilePictureUrl() {
-        return profilePictureUrl;
+    public byte[] getProfilePicture() {
+        return profilePicture;
     }
 
-    public void setProfilePictureUrl(String profilePictureUrl) {
-        this.profilePictureUrl = profilePictureUrl;
+    public void setProfilePicture(byte[] profilePicture) {
+        this.profilePicture = profilePicture;
     }
 
     // Getters and Setters for existing fields
     public Long getId() {
         return id;
     }
+    
+    public String getName() {
+		return name;
+	}
 
-    public void setId(Long id) {
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setId(Long id) {
         this.id = id;
     }
 
@@ -108,6 +119,6 @@ public class UserDTO {
     public String toString() {
         return "UserDTO [id=" + id + ", name=" + name + ", username=" + username + ", email=" + email + ", password=" 
                 + password + ", role=" + role + ", gender=" + gender + ", dateOfBirth=" + dateOfBirth 
-                + ", profilePictureUrl=" + profilePictureUrl + "]";
+                + ", profilePictureUrl=" +   "]";
     }
 }

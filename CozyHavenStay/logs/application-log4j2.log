@@ -1,100 +1,999 @@
-2024-12-19 21:17:35 [background-preinit] INFO  : HV000001: Hibernate Validator 8.0.1.Final
-2024-12-19 21:17:35 [restartedMain] INFO  : Starting CozyHavenStayApplication using Java 17.0.12 with PID 18900 (C:\gitsts\CozyHavenStay\target\classes started by rohit bhure in C:\gitsts\CozyHavenStay)
-2024-12-19 21:17:35 [restartedMain] INFO  : No active profile set, falling back to 1 default profile: "default"
-2024-12-19 21:17:35 [restartedMain] INFO  : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-12-19 21:17:35 [restartedMain] INFO  : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-12-19 21:17:39 [restartedMain] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-12-19 21:17:40 [restartedMain] INFO  : Finished Spring Data repository scanning in 497 ms. Found 6 JPA repository interfaces.
-2024-12-19 21:17:42 [restartedMain] DEBUG : Found AspectJ method: public void com.hexaware.CozyHavenStay.aspect.LoggingAspect.logBeforeV1(org.aspectj.lang.JoinPoint)
-2024-12-19 21:17:42 [restartedMain] DEBUG : Found AspectJ method: public void com.hexaware.CozyHavenStay.aspect.LoggingAspect.throwingAdvice(org.aspectj.lang.JoinPoint,java.lang.Throwable)
-2024-12-19 21:17:44 [restartedMain] INFO  : Tomcat initialized with port 8082 (http)
-2024-12-19 21:17:44 [restartedMain] INFO  : Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
-2024-12-19 21:17:44 [restartedMain] INFO  : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
-2024-12-19 21:17:44 [restartedMain] INFO  : Initializing ProtocolHandler ["http-nio-8082"]
-2024-12-19 21:17:44 [restartedMain] INFO  : Starting service [Tomcat]
-2024-12-19 21:17:44 [restartedMain] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.31]
-2024-12-19 21:17:44 [restartedMain] INFO  : Initializing Spring embedded WebApplicationContext
-2024-12-19 21:17:44 [restartedMain] INFO  : Root WebApplicationContext: initialization completed in 8498 ms
-2024-12-19 21:17:44 [restartedMain] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-12-19 21:17:44 [restartedMain] INFO  : HHH000412: Hibernate ORM core version 6.5.3.Final
-2024-12-19 21:17:44 [restartedMain] INFO  : HHH000026: Second-level cache disabled
-2024-12-19 21:17:45 [restartedMain] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-12-19 21:17:45 [restartedMain] INFO  : HikariPool-1 - Starting...
-2024-12-19 21:17:45 [restartedMain] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5838d1a6
-2024-12-19 21:17:45 [restartedMain] INFO  : HikariPool-1 - Start completed.
-2024-12-19 21:17:45 [restartedMain] WARN  : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-12-19 21:17:47 [restartedMain] INFO  : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-12-19 21:17:47 [restartedMain] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-12-19 21:17:48 [restartedMain] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-12-19 21:17:48 [restartedMain] INFO  : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
-2024-12-19 21:17:48 [restartedMain] INFO  : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-12-19 21:17:49 [restartedMain] DEBUG : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JWTFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
-2024-12-19 21:17:50 [restartedMain] INFO  : LiveReload server is running on port 35729
-2024-12-19 21:17:50 [restartedMain] INFO  : Starting ProtocolHandler ["http-nio-8082"]
-2024-12-19 21:17:50 [restartedMain] INFO  : Tomcat started on port 8082 (http) with context path '/'
-2024-12-19 21:17:50 [restartedMain] INFO  : Started CozyHavenStayApplication in 17.095 seconds (process running for 21.1)
-2024-12-19 21:18:36 [http-nio-8082-exec-1] INFO  : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-12-19 21:18:36 [http-nio-8082-exec-1] INFO  : Initializing Servlet 'dispatcherServlet'
-2024-12-19 21:18:36 [http-nio-8082-exec-1] INFO  : Completed initialization in 3 ms
-2024-12-19 21:18:36 [http-nio-8082-exec-1] DEBUG : Securing OPTIONS /auth/login
-2024-12-19 21:18:36 [http-nio-8082-exec-1] DEBUG : Secured OPTIONS /auth/login
-2024-12-19 21:18:36 [http-nio-8082-exec-1] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
-2024-12-19 21:18:36 [http-nio-8082-exec-2] DEBUG : Securing POST /auth/login
-2024-12-19 21:18:36 [http-nio-8082-exec-2] DEBUG : Secured POST /auth/login
-2024-12-19 21:18:36 [http-nio-8082-exec-2] DEBUG : Authenticated user
-2024-12-19 21:18:36 [http-nio-8082-exec-2] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
-2024-12-19 21:18:39 [http-nio-8082-exec-4] DEBUG : Securing GET /api/hotels/getallhotel
-2024-12-19 21:18:39 [http-nio-8082-exec-4] DEBUG : Secured GET /api/hotels/getallhotel
-2024-12-19 21:18:39 [http-nio-8082-exec-4] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
-2024-12-19 21:18:39 [http-nio-8082-exec-5] DEBUG : Securing OPTIONS /auth/getUserId
-2024-12-19 21:18:39 [http-nio-8082-exec-5] DEBUG : Secured OPTIONS /auth/getUserId
-2024-12-19 21:18:39 [http-nio-8082-exec-5] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
-2024-12-19 21:18:39 [http-nio-8082-exec-5] DEBUG : Securing GET /api/hotels/getallhotel
-2024-12-19 21:18:39 [http-nio-8082-exec-5] DEBUG : Secured GET /api/hotels/getallhotel
-2024-12-19 21:18:39 [http-nio-8082-exec-6] DEBUG : Securing OPTIONS /auth/getUserId
-2024-12-19 21:18:39 [http-nio-8082-exec-6] DEBUG : Secured OPTIONS /auth/getUserId
-2024-12-19 21:18:39 [http-nio-8082-exec-6] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
-2024-12-19 21:18:39 [http-nio-8082-exec-6] DEBUG : Securing GET /auth/getUserId
-2024-12-19 21:18:39 [http-nio-8082-exec-5] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
-2024-12-19 21:18:39 [http-nio-8082-exec-5] DEBUG : Securing GET /api/hotels/getallhotel
-2024-12-19 21:18:39 [http-nio-8082-exec-5] DEBUG : Secured GET /api/hotels/getallhotel
-2024-12-19 21:18:39 [http-nio-8082-exec-5] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
-2024-12-19 21:18:39 [http-nio-8082-exec-6] DEBUG : Secured GET /auth/getUserId
-2024-12-19 21:18:40 [http-nio-8082-exec-8] DEBUG : Securing GET /auth/getUserId
-2024-12-19 21:18:40 [http-nio-8082-exec-8] DEBUG : Secured GET /auth/getUserId
-2024-12-19 21:18:42 [http-nio-8082-exec-1] DEBUG : Securing OPTIONS /api/users/getuser/206
-2024-12-19 21:18:42 [http-nio-8082-exec-1] DEBUG : Secured OPTIONS /api/users/getuser/206
-2024-12-19 21:18:42 [http-nio-8082-exec-9] DEBUG : Securing OPTIONS /api/bookings/getbookingbyuserid/206
-2024-12-19 21:18:42 [http-nio-8082-exec-9] DEBUG : Secured OPTIONS /api/bookings/getbookingbyuserid/206
-2024-12-19 21:18:42 [http-nio-8082-exec-1] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
-2024-12-19 21:18:42 [http-nio-8082-exec-2] DEBUG : Securing OPTIONS /api/reviews/getreviewbyuserid/206
-2024-12-19 21:18:42 [http-nio-8082-exec-2] DEBUG : Secured OPTIONS /api/reviews/getreviewbyuserid/206
-2024-12-19 21:18:42 [http-nio-8082-exec-2] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
-2024-12-19 21:18:42 [http-nio-8082-exec-9] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
-2024-12-19 21:18:42 [http-nio-8082-exec-9] DEBUG : Securing GET /api/reviews/getreviewbyuserid/206
-2024-12-19 21:18:42 [http-nio-8082-exec-3] DEBUG : Securing OPTIONS /api/bookings/getbookingbyuserid/206
-2024-12-19 21:18:42 [http-nio-8082-exec-3] DEBUG : Secured OPTIONS /api/bookings/getbookingbyuserid/206
-2024-12-19 21:18:42 [http-nio-8082-exec-7] DEBUG : Securing OPTIONS /api/reviews/getreviewbyuserid/206
-2024-12-19 21:18:42 [http-nio-8082-exec-7] DEBUG : Secured OPTIONS /api/reviews/getreviewbyuserid/206
-2024-12-19 21:18:42 [http-nio-8082-exec-1] DEBUG : Securing GET /api/bookings/getbookingbyuserid/206
-2024-12-19 21:18:42 [http-nio-8082-exec-4] DEBUG : Securing OPTIONS /api/users/getuser/206
-2024-12-19 21:18:42 [http-nio-8082-exec-4] DEBUG : Secured OPTIONS /api/users/getuser/206
-2024-12-19 21:18:42 [http-nio-8082-exec-3] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
-2024-12-19 21:18:42 [http-nio-8082-exec-4] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
-2024-12-19 21:18:42 [http-nio-8082-exec-10] DEBUG : Securing GET /api/users/getuser/206
-2024-12-19 21:18:42 [http-nio-8082-exec-7] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
-2024-12-19 21:18:42 [http-nio-8082-exec-9] DEBUG : Secured GET /api/reviews/getreviewbyuserid/206
-2024-12-19 21:18:42 [http-nio-8082-exec-9] DEBUG : Securing GET /api/reviews/getreviewbyuserid/206
-2024-12-19 21:18:42 [http-nio-8082-exec-1] DEBUG : Secured GET /api/bookings/getbookingbyuserid/206
-2024-12-19 21:18:42 [http-nio-8082-exec-10] DEBUG : Secured GET /api/users/getuser/206
-2024-12-19 21:18:42 [http-nio-8082-exec-9] DEBUG : Secured GET /api/reviews/getreviewbyuserid/206
-2024-12-19 21:18:42 [http-nio-8082-exec-8] DEBUG : Securing GET /api/users/getuser/206
-2024-12-19 21:18:42 [http-nio-8082-exec-8] DEBUG : Secured GET /api/users/getuser/206
-2024-12-19 21:18:42 [http-nio-8082-exec-2] DEBUG : Securing GET /api/bookings/getbookingbyuserid/206
-2024-12-19 21:18:42 [http-nio-8082-exec-2] DEBUG : Secured GET /api/bookings/getbookingbyuserid/206
-2024-12-19 21:18:45 [http-nio-8082-exec-3] DEBUG : Securing GET /api/hotels/getallhotel
-2024-12-19 21:18:45 [http-nio-8082-exec-3] DEBUG : Secured GET /api/hotels/getallhotel
-2024-12-19 21:18:45 [http-nio-8082-exec-3] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
-2024-12-19 21:18:45 [http-nio-8082-exec-4] DEBUG : Securing GET /api/hotels/getallhotel
-2024-12-19 21:18:45 [http-nio-8082-exec-4] DEBUG : Secured GET /api/hotels/getallhotel
-2024-12-19 21:18:45 [http-nio-8082-exec-4] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 12:37:37 [background-preinit] INFO  : HV000001: Hibernate Validator 8.0.1.Final
+2024-12-20 12:37:37 [restartedMain] INFO  : Starting CozyHavenStayApplication using Java 17.0.12 with PID 21948 (C:\Users\ADITY\CozyHavenStay\CozyHavenStay\target\classes started by ADITY in C:\Users\ADITY\CozyHavenStay\CozyHavenStay)
+2024-12-20 12:37:37 [restartedMain] INFO  : No active profile set, falling back to 1 default profile: "default"
+2024-12-20 12:37:37 [restartedMain] INFO  : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-20 12:37:37 [restartedMain] INFO  : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-20 12:37:38 [restartedMain] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-20 12:37:38 [restartedMain] INFO  : Finished Spring Data repository scanning in 68 ms. Found 7 JPA repository interfaces.
+2024-12-20 12:37:38 [restartedMain] DEBUG : Found AspectJ method: public void com.hexaware.CozyHavenStay.aspect.LoggingAspect.logBeforeV1(org.aspectj.lang.JoinPoint)
+2024-12-20 12:37:38 [restartedMain] DEBUG : Found AspectJ method: public void com.hexaware.CozyHavenStay.aspect.LoggingAspect.throwingAdvice(org.aspectj.lang.JoinPoint,java.lang.Throwable)
+2024-12-20 12:37:38 [restartedMain] INFO  : Tomcat initialized with port 8082 (http)
+2024-12-20 12:37:38 [restartedMain] INFO  : Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2024-12-20 12:37:38 [restartedMain] INFO  : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2024-12-20 12:37:38 [restartedMain] INFO  : Initializing ProtocolHandler ["http-nio-8082"]
+2024-12-20 12:37:38 [restartedMain] INFO  : Starting service [Tomcat]
+2024-12-20 12:37:38 [restartedMain] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-20 12:37:39 [restartedMain] INFO  : Initializing Spring embedded WebApplicationContext
+2024-12-20 12:37:39 [restartedMain] INFO  : Root WebApplicationContext: initialization completed in 1676 ms
+2024-12-20 12:37:39 [restartedMain] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-20 12:37:39 [restartedMain] INFO  : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-20 12:37:39 [restartedMain] INFO  : HHH000026: Second-level cache disabled
+2024-12-20 12:37:39 [restartedMain] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-20 12:37:39 [restartedMain] INFO  : HikariPool-1 - Starting...
+2024-12-20 12:37:39 [restartedMain] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6244ef7b
+2024-12-20 12:37:39 [restartedMain] INFO  : HikariPool-1 - Start completed.
+2024-12-20 12:37:39 [restartedMain] WARN  : HHH000511: The 5.6.29 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-12-20 12:37:39 [restartedMain] WARN  : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-20 12:37:40 [restartedMain] INFO  : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-20 12:37:40 [restartedMain] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-20 12:37:41 [restartedMain] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-20 12:37:41 [restartedMain] INFO  : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-12-20 12:37:41 [restartedMain] INFO  : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-20 12:37:42 [restartedMain] DEBUG : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JWTFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-12-20 12:37:42 [restartedMain] INFO  : LiveReload server is running on port 35729
+2024-12-20 12:37:42 [restartedMain] INFO  : Starting ProtocolHandler ["http-nio-8082"]
+2024-12-20 12:37:42 [restartedMain] INFO  : Tomcat started on port 8082 (http) with context path '/'
+2024-12-20 12:37:42 [restartedMain] INFO  : Started CozyHavenStayApplication in 5.729 seconds (process running for 6.393)
+2024-12-20 12:38:21 [http-nio-8082-exec-1] INFO  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-20 12:38:21 [http-nio-8082-exec-1] INFO  : Initializing Servlet 'dispatcherServlet'
+2024-12-20 12:38:21 [http-nio-8082-exec-1] INFO  : Completed initialization in 1 ms
+2024-12-20 12:38:21 [http-nio-8082-exec-1] DEBUG : Securing OPTIONS /api/users/register
+2024-12-20 12:38:21 [http-nio-8082-exec-1] DEBUG : Secured OPTIONS /api/users/register
+2024-12-20 12:38:21 [http-nio-8082-exec-1] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 12:38:21 [http-nio-8082-exec-2] DEBUG : Securing POST /api/users/register
+2024-12-20 12:38:21 [http-nio-8082-exec-2] DEBUG : Secured POST /api/users/register
+2024-12-20 12:38:21 [http-nio-8082-exec-2] INFO  : registerUserAspect.logBeforeregisterUser() : registerUser
+2024-12-20 12:38:21 [http-nio-8082-exec-2] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 12:38:29 [http-nio-8082-exec-3] DEBUG : Securing OPTIONS /auth/login
+2024-12-20 12:38:29 [http-nio-8082-exec-3] DEBUG : Secured OPTIONS /auth/login
+2024-12-20 12:38:29 [http-nio-8082-exec-3] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 12:38:29 [http-nio-8082-exec-4] DEBUG : Securing POST /auth/login
+2024-12-20 12:38:29 [http-nio-8082-exec-4] DEBUG : Secured POST /auth/login
+2024-12-20 12:38:29 [http-nio-8082-exec-4] DEBUG : Authenticated user
+2024-12-20 12:38:29 [http-nio-8082-exec-4] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 12:38:32 [http-nio-8082-exec-5] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 12:38:32 [http-nio-8082-exec-5] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 12:38:32 [http-nio-8082-exec-5] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 12:38:32 [http-nio-8082-exec-6] DEBUG : Securing OPTIONS /auth/getUserId
+2024-12-20 12:38:32 [http-nio-8082-exec-7] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 12:38:32 [http-nio-8082-exec-7] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 12:38:32 [http-nio-8082-exec-8] DEBUG : Securing OPTIONS /auth/getUserId
+2024-12-20 12:38:32 [http-nio-8082-exec-6] DEBUG : Secured OPTIONS /auth/getUserId
+2024-12-20 12:38:32 [http-nio-8082-exec-8] DEBUG : Secured OPTIONS /auth/getUserId
+2024-12-20 12:38:32 [http-nio-8082-exec-6] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 12:38:32 [http-nio-8082-exec-8] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 12:38:32 [http-nio-8082-exec-9] DEBUG : Securing GET /auth/getUserId
+2024-12-20 12:38:32 [http-nio-8082-exec-9] DEBUG : Secured GET /auth/getUserId
+2024-12-20 12:38:32 [http-nio-8082-exec-7] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 12:38:32 [http-nio-8082-exec-10] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 12:38:32 [http-nio-8082-exec-10] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 12:38:32 [http-nio-8082-exec-1] DEBUG : Securing GET /auth/getUserId
+2024-12-20 12:38:32 [http-nio-8082-exec-1] DEBUG : Secured GET /auth/getUserId
+2024-12-20 12:38:32 [http-nio-8082-exec-10] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 12:38:33 [http-nio-8082-exec-4] DEBUG : Securing OPTIONS /api/bookings/getbookingbyuserid/6
+2024-12-20 12:38:33 [http-nio-8082-exec-4] DEBUG : Secured OPTIONS /api/bookings/getbookingbyuserid/6
+2024-12-20 12:38:33 [http-nio-8082-exec-5] DEBUG : Securing OPTIONS /api/users/getuser/6
+2024-12-20 12:38:33 [http-nio-8082-exec-5] DEBUG : Secured OPTIONS /api/users/getuser/6
+2024-12-20 12:38:33 [http-nio-8082-exec-3] DEBUG : Securing OPTIONS /api/reviews/getreviewbyuserid/6
+2024-12-20 12:38:33 [http-nio-8082-exec-3] DEBUG : Secured OPTIONS /api/reviews/getreviewbyuserid/6
+2024-12-20 12:38:33 [http-nio-8082-exec-6] DEBUG : Securing OPTIONS /api/bookings/getbookingbyuserid/6
+2024-12-20 12:38:33 [http-nio-8082-exec-6] DEBUG : Secured OPTIONS /api/bookings/getbookingbyuserid/6
+2024-12-20 12:38:33 [http-nio-8082-exec-8] DEBUG : Securing OPTIONS /api/reviews/getreviewbyuserid/6
+2024-12-20 12:38:33 [http-nio-8082-exec-8] DEBUG : Secured OPTIONS /api/reviews/getreviewbyuserid/6
+2024-12-20 12:38:33 [http-nio-8082-exec-4] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 12:38:33 [http-nio-8082-exec-3] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 12:38:33 [http-nio-8082-exec-2] DEBUG : Securing OPTIONS /api/users/getuser/6
+2024-12-20 12:38:33 [http-nio-8082-exec-8] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 12:38:33 [http-nio-8082-exec-2] DEBUG : Secured OPTIONS /api/users/getuser/6
+2024-12-20 12:38:33 [http-nio-8082-exec-6] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 12:38:33 [http-nio-8082-exec-5] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 12:38:33 [http-nio-8082-exec-2] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 12:38:33 [http-nio-8082-exec-7] DEBUG : Securing GET /api/bookings/getbookingbyuserid/6
+2024-12-20 12:38:33 [http-nio-8082-exec-1] DEBUG : Securing GET /api/reviews/getreviewbyuserid/6
+2024-12-20 12:38:33 [http-nio-8082-exec-9] DEBUG : Securing GET /api/users/getuser/6
+2024-12-20 12:38:33 [http-nio-8082-exec-9] DEBUG : Secured GET /api/users/getuser/6
+2024-12-20 12:38:33 [http-nio-8082-exec-1] DEBUG : Secured GET /api/reviews/getreviewbyuserid/6
+2024-12-20 12:38:33 [http-nio-8082-exec-7] DEBUG : Secured GET /api/bookings/getbookingbyuserid/6
+2024-12-20 12:38:33 [http-nio-8082-exec-4] DEBUG : Securing GET /api/reviews/getreviewbyuserid/6
+2024-12-20 12:38:33 [http-nio-8082-exec-10] DEBUG : Securing GET /api/bookings/getbookingbyuserid/6
+2024-12-20 12:38:33 [http-nio-8082-exec-4] DEBUG : Secured GET /api/reviews/getreviewbyuserid/6
+2024-12-20 12:38:33 [http-nio-8082-exec-10] DEBUG : Secured GET /api/bookings/getbookingbyuserid/6
+2024-12-20 12:38:33 [http-nio-8082-exec-3] DEBUG : Securing GET /api/users/getuser/6
+2024-12-20 12:38:33 [http-nio-8082-exec-3] DEBUG : Secured GET /api/users/getuser/6
+2024-12-20 12:39:18 [http-nio-8082-exec-8] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 12:39:18 [http-nio-8082-exec-8] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 12:39:18 [http-nio-8082-exec-8] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 12:39:18 [http-nio-8082-exec-6] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 12:39:18 [http-nio-8082-exec-6] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 12:39:19 [http-nio-8082-exec-6] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 12:39:20 [http-nio-8082-exec-5] DEBUG : Securing GET /api/hotels/gethotelbyid/1
+2024-12-20 12:39:20 [http-nio-8082-exec-5] DEBUG : Secured GET /api/hotels/gethotelbyid/1
+2024-12-20 12:39:20 [http-nio-8082-exec-5] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 12:39:20 [http-nio-8082-exec-2] DEBUG : Securing GET /api/hotels/gethotelbyid/1
+2024-12-20 12:39:20 [http-nio-8082-exec-2] DEBUG : Secured GET /api/hotels/gethotelbyid/1
+2024-12-20 12:39:20 [http-nio-8082-exec-2] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 12:40:31 [http-nio-8082-exec-8] DEBUG : Securing OPTIONS /api/users/getuserbyusername/veg
+2024-12-20 12:40:31 [http-nio-8082-exec-8] DEBUG : Secured OPTIONS /api/users/getuserbyusername/veg
+2024-12-20 12:40:31 [http-nio-8082-exec-8] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 12:40:31 [http-nio-8082-exec-6] DEBUG : Securing GET /api/users/getuserbyusername/veg
+2024-12-20 12:40:31 [http-nio-8082-exec-6] DEBUG : Secured GET /api/users/getuserbyusername/veg
+2024-12-20 12:40:31 [http-nio-8082-exec-5] DEBUG : Securing OPTIONS /api/bookings/createbooking
+2024-12-20 12:40:31 [http-nio-8082-exec-5] DEBUG : Secured OPTIONS /api/bookings/createbooking
+2024-12-20 12:40:31 [http-nio-8082-exec-5] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 12:40:31 [http-nio-8082-exec-2] DEBUG : Securing POST /api/bookings/createbooking
+2024-12-20 12:40:31 [http-nio-8082-exec-2] DEBUG : Secured POST /api/bookings/createbooking
+2024-12-20 12:40:33 [http-nio-8082-exec-1] DEBUG : Securing GET /api/users/getuser/6
+2024-12-20 12:40:33 [http-nio-8082-exec-10] DEBUG : Securing GET /api/reviews/getreviewbyuserid/6
+2024-12-20 12:40:33 [http-nio-8082-exec-4] DEBUG : Securing GET /api/bookings/getbookingbyuserid/6
+2024-12-20 12:40:33 [http-nio-8082-exec-1] DEBUG : Secured GET /api/users/getuser/6
+2024-12-20 12:40:33 [http-nio-8082-exec-10] DEBUG : Secured GET /api/reviews/getreviewbyuserid/6
+2024-12-20 12:40:33 [http-nio-8082-exec-4] DEBUG : Secured GET /api/bookings/getbookingbyuserid/6
+2024-12-20 12:40:33 [http-nio-8082-exec-7] DEBUG : Securing GET /api/reviews/getreviewbyuserid/6
+2024-12-20 12:40:33 [http-nio-8082-exec-7] DEBUG : Secured GET /api/reviews/getreviewbyuserid/6
+2024-12-20 12:40:33 [http-nio-8082-exec-3] DEBUG : Securing GET /api/users/getuser/6
+2024-12-20 12:40:33 [http-nio-8082-exec-3] DEBUG : Secured GET /api/users/getuser/6
+2024-12-20 12:40:33 [http-nio-8082-exec-9] DEBUG : Securing GET /api/bookings/getbookingbyuserid/6
+2024-12-20 12:40:33 [http-nio-8082-exec-9] DEBUG : Secured GET /api/bookings/getbookingbyuserid/6
+2024-12-20 12:40:47 [http-nio-8082-exec-8] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 12:40:47 [http-nio-8082-exec-8] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 12:40:47 [http-nio-8082-exec-8] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 12:40:47 [http-nio-8082-exec-6] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 12:40:47 [http-nio-8082-exec-6] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 12:40:47 [http-nio-8082-exec-6] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 12:43:40 [http-nio-8082-exec-4] DEBUG : Securing GET /api/bookings/getbookingbyuserid/6
+2024-12-20 12:43:40 [http-nio-8082-exec-7] DEBUG : Securing GET /api/reviews/getreviewbyuserid/6
+2024-12-20 12:43:40 [http-nio-8082-exec-1] DEBUG : Securing GET /api/users/getuser/6
+2024-12-20 12:43:40 [http-nio-8082-exec-4] DEBUG : Secured GET /api/bookings/getbookingbyuserid/6
+2024-12-20 12:43:40 [http-nio-8082-exec-7] DEBUG : Secured GET /api/reviews/getreviewbyuserid/6
+2024-12-20 12:43:40 [http-nio-8082-exec-1] DEBUG : Secured GET /api/users/getuser/6
+2024-12-20 12:43:40 [http-nio-8082-exec-3] DEBUG : Securing GET /api/reviews/getreviewbyuserid/6
+2024-12-20 12:43:40 [http-nio-8082-exec-9] DEBUG : Securing GET /api/users/getuser/6
+2024-12-20 12:43:40 [http-nio-8082-exec-3] DEBUG : Secured GET /api/reviews/getreviewbyuserid/6
+2024-12-20 12:43:40 [http-nio-8082-exec-8] DEBUG : Securing GET /api/bookings/getbookingbyuserid/6
+2024-12-20 12:43:40 [http-nio-8082-exec-9] DEBUG : Secured GET /api/users/getuser/6
+2024-12-20 12:43:40 [http-nio-8082-exec-8] DEBUG : Secured GET /api/bookings/getbookingbyuserid/6
+2024-12-20 12:57:54 [http-nio-8082-exec-7] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 12:57:54 [http-nio-8082-exec-7] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 12:57:54 [http-nio-8082-exec-7] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 12:57:54 [http-nio-8082-exec-1] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 12:57:54 [http-nio-8082-exec-1] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 12:57:54 [http-nio-8082-exec-1] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 12:58:11 [http-nio-8082-exec-9] DEBUG : Securing GET /api/bookings/getbookingbyuserid/6
+2024-12-20 12:58:11 [http-nio-8082-exec-4] DEBUG : Securing GET /api/users/getuser/6
+2024-12-20 12:58:11 [http-nio-8082-exec-3] DEBUG : Securing GET /api/reviews/getreviewbyuserid/6
+2024-12-20 12:58:11 [http-nio-8082-exec-3] DEBUG : Secured GET /api/reviews/getreviewbyuserid/6
+2024-12-20 12:58:11 [http-nio-8082-exec-4] DEBUG : Secured GET /api/users/getuser/6
+2024-12-20 12:58:11 [http-nio-8082-exec-9] DEBUG : Secured GET /api/bookings/getbookingbyuserid/6
+2024-12-20 12:58:11 [http-nio-8082-exec-8] DEBUG : Securing GET /api/reviews/getreviewbyuserid/6
+2024-12-20 12:58:11 [http-nio-8082-exec-8] DEBUG : Secured GET /api/reviews/getreviewbyuserid/6
+2024-12-20 12:58:11 [http-nio-8082-exec-6] DEBUG : Securing GET /api/users/getuser/6
+2024-12-20 12:58:11 [http-nio-8082-exec-5] DEBUG : Securing GET /api/bookings/getbookingbyuserid/6
+2024-12-20 12:58:11 [http-nio-8082-exec-6] DEBUG : Secured GET /api/users/getuser/6
+2024-12-20 12:58:11 [http-nio-8082-exec-5] DEBUG : Secured GET /api/bookings/getbookingbyuserid/6
+2024-12-20 13:02:44 [http-nio-8082-exec-3] DEBUG : Securing GET /api/users/getuser/6
+2024-12-20 13:02:44 [http-nio-8082-exec-4] DEBUG : Securing GET /api/reviews/getreviewbyuserid/6
+2024-12-20 13:02:44 [http-nio-8082-exec-9] DEBUG : Securing GET /api/bookings/getbookingbyuserid/6
+2024-12-20 13:02:44 [http-nio-8082-exec-9] DEBUG : Secured GET /api/bookings/getbookingbyuserid/6
+2024-12-20 13:02:44 [http-nio-8082-exec-4] DEBUG : Secured GET /api/reviews/getreviewbyuserid/6
+2024-12-20 13:02:44 [http-nio-8082-exec-3] DEBUG : Secured GET /api/users/getuser/6
+2024-12-20 13:02:44 [http-nio-8082-exec-8] DEBUG : Securing GET /api/reviews/getreviewbyuserid/6
+2024-12-20 13:02:44 [http-nio-8082-exec-6] DEBUG : Securing GET /api/users/getuser/6
+2024-12-20 13:02:44 [http-nio-8082-exec-8] DEBUG : Secured GET /api/reviews/getreviewbyuserid/6
+2024-12-20 13:02:44 [http-nio-8082-exec-5] DEBUG : Securing GET /api/bookings/getbookingbyuserid/6
+2024-12-20 13:02:44 [http-nio-8082-exec-6] DEBUG : Secured GET /api/users/getuser/6
+2024-12-20 13:02:44 [http-nio-8082-exec-5] DEBUG : Secured GET /api/bookings/getbookingbyuserid/6
+2024-12-20 13:02:54 [http-nio-8082-exec-1] DEBUG : Securing GET /api/users/getuser/6
+2024-12-20 13:02:54 [http-nio-8082-exec-2] DEBUG : Securing GET /api/reviews/getreviewbyuserid/6
+2024-12-20 13:02:54 [http-nio-8082-exec-10] DEBUG : Securing GET /api/bookings/getbookingbyuserid/6
+2024-12-20 13:02:54 [http-nio-8082-exec-10] DEBUG : Secured GET /api/bookings/getbookingbyuserid/6
+2024-12-20 13:02:54 [http-nio-8082-exec-1] DEBUG : Secured GET /api/users/getuser/6
+2024-12-20 13:02:54 [http-nio-8082-exec-2] DEBUG : Secured GET /api/reviews/getreviewbyuserid/6
+2024-12-20 13:02:54 [http-nio-8082-exec-7] DEBUG : Securing GET /api/users/getuser/6
+2024-12-20 13:02:54 [http-nio-8082-exec-3] DEBUG : Securing GET /api/bookings/getbookingbyuserid/6
+2024-12-20 13:02:54 [http-nio-8082-exec-4] DEBUG : Securing GET /api/reviews/getreviewbyuserid/6
+2024-12-20 13:02:54 [http-nio-8082-exec-7] DEBUG : Secured GET /api/users/getuser/6
+2024-12-20 13:02:54 [http-nio-8082-exec-3] DEBUG : Secured GET /api/bookings/getbookingbyuserid/6
+2024-12-20 13:02:54 [http-nio-8082-exec-4] DEBUG : Secured GET /api/reviews/getreviewbyuserid/6
+2024-12-20 13:16:01 [http-nio-8082-exec-2] DEBUG : Securing OPTIONS /api/reviews/getreviewbyuserid/6
+2024-12-20 13:16:01 [http-nio-8082-exec-10] DEBUG : Securing OPTIONS /api/bookings/getbookingbyuserid/6
+2024-12-20 13:16:01 [http-nio-8082-exec-10] DEBUG : Secured OPTIONS /api/bookings/getbookingbyuserid/6
+2024-12-20 13:16:01 [http-nio-8082-exec-7] DEBUG : Securing OPTIONS /api/reviews/getreviewbyuserid/6
+2024-12-20 13:16:01 [http-nio-8082-exec-4] DEBUG : Securing OPTIONS /api/users/getuser/6
+2024-12-20 13:16:01 [http-nio-8082-exec-7] DEBUG : Secured OPTIONS /api/reviews/getreviewbyuserid/6
+2024-12-20 13:16:01 [http-nio-8082-exec-4] DEBUG : Secured OPTIONS /api/users/getuser/6
+2024-12-20 13:16:01 [http-nio-8082-exec-3] DEBUG : Securing OPTIONS /api/bookings/getbookingbyuserid/6
+2024-12-20 13:16:01 [http-nio-8082-exec-2] DEBUG : Secured OPTIONS /api/reviews/getreviewbyuserid/6
+2024-12-20 13:16:01 [http-nio-8082-exec-1] DEBUG : Securing OPTIONS /api/users/getuser/6
+2024-12-20 13:16:01 [http-nio-8082-exec-3] DEBUG : Secured OPTIONS /api/bookings/getbookingbyuserid/6
+2024-12-20 13:16:01 [http-nio-8082-exec-1] DEBUG : Secured OPTIONS /api/users/getuser/6
+2024-12-20 13:16:01 [http-nio-8082-exec-4] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:16:01 [http-nio-8082-exec-10] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:16:01 [http-nio-8082-exec-2] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:16:01 [http-nio-8082-exec-7] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:16:01 [http-nio-8082-exec-3] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:16:01 [http-nio-8082-exec-1] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:16:01 [http-nio-8082-exec-8] DEBUG : Securing GET /api/bookings/getbookingbyuserid/6
+2024-12-20 13:16:01 [http-nio-8082-exec-5] DEBUG : Securing GET /api/users/getuser/6
+2024-12-20 13:16:01 [http-nio-8082-exec-9] DEBUG : Securing GET /api/reviews/getreviewbyuserid/6
+2024-12-20 13:16:01 [http-nio-8082-exec-8] DEBUG : Secured GET /api/bookings/getbookingbyuserid/6
+2024-12-20 13:16:01 [http-nio-8082-exec-9] DEBUG : Secured GET /api/reviews/getreviewbyuserid/6
+2024-12-20 13:16:01 [http-nio-8082-exec-5] DEBUG : Secured GET /api/users/getuser/6
+2024-12-20 13:16:01 [http-nio-8082-exec-6] DEBUG : Securing GET /api/reviews/getreviewbyuserid/6
+2024-12-20 13:16:01 [http-nio-8082-exec-6] DEBUG : Secured GET /api/reviews/getreviewbyuserid/6
+2024-12-20 13:16:01 [http-nio-8082-exec-10] DEBUG : Securing GET /api/users/getuser/6
+2024-12-20 13:16:01 [http-nio-8082-exec-3] DEBUG : Securing GET /api/bookings/getbookingbyuserid/6
+2024-12-20 13:16:01 [http-nio-8082-exec-10] DEBUG : Secured GET /api/users/getuser/6
+2024-12-20 13:16:01 [http-nio-8082-exec-3] DEBUG : Secured GET /api/bookings/getbookingbyuserid/6
+2024-12-20 13:16:04 [http-nio-8082-exec-1] DEBUG : Securing OPTIONS /auth/getUserId
+2024-12-20 13:16:04 [http-nio-8082-exec-1] DEBUG : Secured OPTIONS /auth/getUserId
+2024-12-20 13:16:04 [http-nio-8082-exec-2] DEBUG : Securing OPTIONS /auth/getUserId
+2024-12-20 13:16:04 [http-nio-8082-exec-2] DEBUG : Secured OPTIONS /auth/getUserId
+2024-12-20 13:16:04 [http-nio-8082-exec-2] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:16:04 [http-nio-8082-exec-1] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:16:04 [http-nio-8082-exec-7] DEBUG : Securing GET /api/reviews/getreviewbyuserid/6
+2024-12-20 13:16:04 [http-nio-8082-exec-4] DEBUG : Securing GET /api/users/getuser/6
+2024-12-20 13:16:04 [http-nio-8082-exec-7] DEBUG : Secured GET /api/reviews/getreviewbyuserid/6
+2024-12-20 13:16:04 [http-nio-8082-exec-4] DEBUG : Secured GET /api/users/getuser/6
+2024-12-20 13:16:04 [http-nio-8082-exec-9] DEBUG : Securing GET /api/bookings/getbookingbyuserid/6
+2024-12-20 13:16:04 [http-nio-8082-exec-9] DEBUG : Secured GET /api/bookings/getbookingbyuserid/6
+2024-12-20 13:16:04 [http-nio-8082-exec-5] DEBUG : Securing GET /auth/getUserId
+2024-12-20 13:16:04 [http-nio-8082-exec-5] DEBUG : Secured GET /auth/getUserId
+2024-12-20 13:16:04 [http-nio-8082-exec-8] DEBUG : Securing GET /api/reviews/getreviewbyuserid/6
+2024-12-20 13:16:04 [http-nio-8082-exec-8] DEBUG : Secured GET /api/reviews/getreviewbyuserid/6
+2024-12-20 13:16:04 [http-nio-8082-exec-6] DEBUG : Securing GET /api/users/getuser/6
+2024-12-20 13:16:04 [http-nio-8082-exec-6] DEBUG : Secured GET /api/users/getuser/6
+2024-12-20 13:16:04 [http-nio-8082-exec-3] DEBUG : Securing GET /auth/getUserId
+2024-12-20 13:16:04 [http-nio-8082-exec-10] DEBUG : Securing GET /api/bookings/getbookingbyuserid/6
+2024-12-20 13:16:04 [http-nio-8082-exec-3] DEBUG : Secured GET /auth/getUserId
+2024-12-20 13:16:04 [http-nio-8082-exec-10] DEBUG : Secured GET /api/bookings/getbookingbyuserid/6
+2024-12-20 13:17:50 [http-nio-8082-exec-3] DEBUG : Securing GET /api/bookings/getbookingbyuserid/6
+2024-12-20 13:17:50 [http-nio-8082-exec-6] DEBUG : Securing GET /api/reviews/getreviewbyuserid/6
+2024-12-20 13:17:50 [http-nio-8082-exec-8] DEBUG : Securing GET /api/users/getuser/6
+2024-12-20 13:17:50 [http-nio-8082-exec-6] DEBUG : Secured GET /api/reviews/getreviewbyuserid/6
+2024-12-20 13:17:50 [http-nio-8082-exec-8] DEBUG : Secured GET /api/users/getuser/6
+2024-12-20 13:17:50 [http-nio-8082-exec-3] DEBUG : Secured GET /api/bookings/getbookingbyuserid/6
+2024-12-20 13:18:53 [http-nio-8082-exec-7] DEBUG : Securing GET /api/users/getuser/6
+2024-12-20 13:18:53 [http-nio-8082-exec-5] DEBUG : Securing GET /api/reviews/getreviewbyuserid/6
+2024-12-20 13:18:53 [http-nio-8082-exec-4] DEBUG : Securing GET /api/bookings/getbookingbyuserid/6
+2024-12-20 13:18:53 [http-nio-8082-exec-7] DEBUG : Secured GET /api/users/getuser/6
+2024-12-20 13:18:53 [http-nio-8082-exec-4] DEBUG : Secured GET /api/bookings/getbookingbyuserid/6
+2024-12-20 13:18:53 [http-nio-8082-exec-5] DEBUG : Secured GET /api/reviews/getreviewbyuserid/6
+2024-12-20 13:31:31 [http-nio-8082-exec-3] DEBUG : Securing GET /auth/getUserId
+2024-12-20 13:31:31 [http-nio-8082-exec-3] DEBUG : Secured GET /auth/getUserId
+2024-12-20 13:31:31 [http-nio-8082-exec-10] DEBUG : Securing GET /api/users/undefined
+2024-12-20 13:31:31 [http-nio-8082-exec-10] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:31:31 [http-nio-8082-exec-2] DEBUG : Securing GET /auth/getUserId
+2024-12-20 13:31:31 [http-nio-8082-exec-10] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 13:31:31 [http-nio-8082-exec-2] DEBUG : Secured GET /auth/getUserId
+2024-12-20 13:31:31 [http-nio-8082-exec-10] DEBUG : Securing GET /error
+2024-12-20 13:31:31 [http-nio-8082-exec-10] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:31:31 [http-nio-8082-exec-10] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 13:31:31 [http-nio-8082-exec-1] DEBUG : Securing GET /api/users/undefined
+2024-12-20 13:31:31 [http-nio-8082-exec-1] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:31:31 [http-nio-8082-exec-1] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 13:31:31 [http-nio-8082-exec-1] DEBUG : Securing GET /error
+2024-12-20 13:31:31 [http-nio-8082-exec-1] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:31:31 [http-nio-8082-exec-1] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 13:32:01 [http-nio-8082-exec-7] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 13:32:01 [http-nio-8082-exec-7] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 13:32:01 [http-nio-8082-exec-7] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:32:01 [http-nio-8082-exec-5] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 13:32:01 [http-nio-8082-exec-5] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 13:32:01 [http-nio-8082-exec-5] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:32:33 [http-nio-8082-exec-8] DEBUG : Securing OPTIONS /api/users/register
+2024-12-20 13:32:33 [http-nio-8082-exec-8] DEBUG : Secured OPTIONS /api/users/register
+2024-12-20 13:32:33 [http-nio-8082-exec-8] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:32:33 [http-nio-8082-exec-6] DEBUG : Securing POST /api/users/register
+2024-12-20 13:32:33 [http-nio-8082-exec-6] DEBUG : Secured POST /api/users/register
+2024-12-20 13:32:33 [http-nio-8082-exec-6] INFO  : registerUserAspect.logBeforeregisterUser() : registerUser
+2024-12-20 13:32:33 [http-nio-8082-exec-6] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:32:40 [http-nio-8082-exec-9] DEBUG : Securing OPTIONS /auth/login
+2024-12-20 13:32:40 [http-nio-8082-exec-9] DEBUG : Secured OPTIONS /auth/login
+2024-12-20 13:32:40 [http-nio-8082-exec-9] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:32:40 [http-nio-8082-exec-3] DEBUG : Securing POST /auth/login
+2024-12-20 13:32:40 [http-nio-8082-exec-3] DEBUG : Secured POST /auth/login
+2024-12-20 13:32:40 [http-nio-8082-exec-3] DEBUG : Authenticated user
+2024-12-20 13:32:40 [http-nio-8082-exec-3] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:32:42 [http-nio-8082-exec-2] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 13:32:42 [http-nio-8082-exec-2] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 13:32:42 [http-nio-8082-exec-2] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:32:43 [http-nio-8082-exec-1] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 13:32:43 [http-nio-8082-exec-10] DEBUG : Securing GET /auth/getUserId
+2024-12-20 13:32:43 [http-nio-8082-exec-1] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 13:32:43 [http-nio-8082-exec-10] DEBUG : Secured GET /auth/getUserId
+2024-12-20 13:32:43 [http-nio-8082-exec-7] DEBUG : Securing GET /auth/getUserId
+2024-12-20 13:32:43 [http-nio-8082-exec-7] DEBUG : Secured GET /auth/getUserId
+2024-12-20 13:32:43 [http-nio-8082-exec-1] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:32:43 [http-nio-8082-exec-1] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 13:32:43 [http-nio-8082-exec-1] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 13:32:43 [http-nio-8082-exec-1] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:32:44 [http-nio-8082-exec-4] DEBUG : Securing GET /api/users/undefined
+2024-12-20 13:32:44 [http-nio-8082-exec-4] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:32:44 [http-nio-8082-exec-4] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 13:32:44 [http-nio-8082-exec-4] DEBUG : Securing GET /error
+2024-12-20 13:32:44 [http-nio-8082-exec-4] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:32:44 [http-nio-8082-exec-4] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 13:32:44 [http-nio-8082-exec-8] DEBUG : Securing GET /api/users/undefined
+2024-12-20 13:32:44 [http-nio-8082-exec-8] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:32:44 [http-nio-8082-exec-8] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 13:32:44 [http-nio-8082-exec-8] DEBUG : Securing GET /error
+2024-12-20 13:32:44 [http-nio-8082-exec-8] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:32:44 [http-nio-8082-exec-8] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 13:35:13 [http-nio-8082-exec-3] DEBUG : Securing GET /api/users/7
+2024-12-20 13:35:13 [http-nio-8082-exec-3] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:35:13 [http-nio-8082-exec-3] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 13:35:13 [http-nio-8082-exec-3] DEBUG : Securing GET /error
+2024-12-20 13:35:13 [http-nio-8082-exec-3] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:35:13 [http-nio-8082-exec-3] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 13:35:13 [http-nio-8082-exec-2] DEBUG : Securing GET /api/users/7
+2024-12-20 13:35:13 [http-nio-8082-exec-2] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:35:13 [http-nio-8082-exec-2] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 13:35:13 [http-nio-8082-exec-2] DEBUG : Securing GET /error
+2024-12-20 13:35:13 [http-nio-8082-exec-2] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:35:13 [http-nio-8082-exec-2] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 13:35:17 [http-nio-8082-exec-10] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 13:35:17 [http-nio-8082-exec-10] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 13:35:17 [http-nio-8082-exec-10] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:35:17 [http-nio-8082-exec-7] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 13:35:17 [http-nio-8082-exec-7] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 13:35:17 [http-nio-8082-exec-7] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:35:17 [http-nio-8082-exec-5] DEBUG : Securing GET /api/users/7
+2024-12-20 13:35:17 [http-nio-8082-exec-5] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:35:17 [http-nio-8082-exec-5] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 13:35:17 [http-nio-8082-exec-5] DEBUG : Securing GET /error
+2024-12-20 13:35:17 [http-nio-8082-exec-5] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:35:17 [http-nio-8082-exec-5] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 13:35:17 [http-nio-8082-exec-1] DEBUG : Securing GET /api/users/7
+2024-12-20 13:35:17 [http-nio-8082-exec-1] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:35:17 [http-nio-8082-exec-1] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 13:35:17 [http-nio-8082-exec-1] DEBUG : Securing GET /error
+2024-12-20 13:35:17 [http-nio-8082-exec-1] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:35:17 [http-nio-8082-exec-1] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 13:36:21 [http-nio-8082-exec-6] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 13:36:21 [http-nio-8082-exec-6] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 13:36:21 [http-nio-8082-exec-6] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:36:21 [http-nio-8082-exec-9] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 13:36:21 [http-nio-8082-exec-9] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 13:36:21 [http-nio-8082-exec-9] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:36:22 [http-nio-8082-exec-3] DEBUG : Securing GET /api/users/7
+2024-12-20 13:36:22 [http-nio-8082-exec-3] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:36:22 [http-nio-8082-exec-3] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 13:36:22 [http-nio-8082-exec-3] DEBUG : Securing GET /error
+2024-12-20 13:36:22 [http-nio-8082-exec-3] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:36:22 [http-nio-8082-exec-3] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 13:36:22 [http-nio-8082-exec-2] DEBUG : Securing GET /api/users/7
+2024-12-20 13:36:22 [http-nio-8082-exec-2] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:36:22 [http-nio-8082-exec-2] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 13:36:22 [http-nio-8082-exec-2] DEBUG : Securing GET /error
+2024-12-20 13:36:22 [http-nio-8082-exec-2] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:36:22 [http-nio-8082-exec-2] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 13:36:31 [http-nio-8082-exec-10] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 13:36:31 [http-nio-8082-exec-10] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 13:36:31 [http-nio-8082-exec-10] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:36:31 [http-nio-8082-exec-7] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 13:36:31 [http-nio-8082-exec-7] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 13:36:31 [http-nio-8082-exec-7] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:36:31 [http-nio-8082-exec-5] DEBUG : Securing GET /api/users/7
+2024-12-20 13:36:31 [http-nio-8082-exec-5] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:36:31 [http-nio-8082-exec-5] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 13:36:31 [http-nio-8082-exec-5] DEBUG : Securing GET /error
+2024-12-20 13:36:31 [http-nio-8082-exec-5] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:36:31 [http-nio-8082-exec-5] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 13:36:32 [http-nio-8082-exec-1] DEBUG : Securing GET /api/users/7
+2024-12-20 13:36:32 [http-nio-8082-exec-1] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:36:32 [http-nio-8082-exec-1] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 13:36:32 [http-nio-8082-exec-1] DEBUG : Securing GET /error
+2024-12-20 13:36:32 [http-nio-8082-exec-1] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:36:32 [http-nio-8082-exec-1] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 13:40:59 [http-nio-8082-exec-6] DEBUG : Securing GET /auth/getUserId
+2024-12-20 13:40:59 [http-nio-8082-exec-3] DEBUG : Securing OPTIONS /api/reviews/getreviewbyuserid/7
+2024-12-20 13:40:59 [http-nio-8082-exec-3] DEBUG : Secured OPTIONS /api/reviews/getreviewbyuserid/7
+2024-12-20 13:40:59 [http-nio-8082-exec-2] DEBUG : Securing OPTIONS /api/bookings/getbookingbyuserid/7
+2024-12-20 13:40:59 [http-nio-8082-exec-2] DEBUG : Secured OPTIONS /api/bookings/getbookingbyuserid/7
+2024-12-20 13:40:59 [http-nio-8082-exec-9] DEBUG : Securing OPTIONS /api/users/getuser/7
+2024-12-20 13:40:59 [http-nio-8082-exec-9] DEBUG : Secured OPTIONS /api/users/getuser/7
+2024-12-20 13:40:59 [http-nio-8082-exec-2] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:40:59 [http-nio-8082-exec-10] DEBUG : Securing OPTIONS /api/users/getuser/7
+2024-12-20 13:40:59 [http-nio-8082-exec-10] DEBUG : Secured OPTIONS /api/users/getuser/7
+2024-12-20 13:40:59 [http-nio-8082-exec-9] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:40:59 [http-nio-8082-exec-3] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:40:59 [http-nio-8082-exec-10] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:40:59 [http-nio-8082-exec-3] DEBUG : Securing OPTIONS /api/reviews/getreviewbyuserid/7
+2024-12-20 13:40:59 [http-nio-8082-exec-3] DEBUG : Secured OPTIONS /api/reviews/getreviewbyuserid/7
+2024-12-20 13:40:59 [http-nio-8082-exec-7] DEBUG : Securing OPTIONS /api/bookings/getbookingbyuserid/7
+2024-12-20 13:40:59 [http-nio-8082-exec-7] DEBUG : Secured OPTIONS /api/bookings/getbookingbyuserid/7
+2024-12-20 13:40:59 [http-nio-8082-exec-3] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:40:59 [http-nio-8082-exec-7] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:40:59 [http-nio-8082-exec-6] DEBUG : Secured GET /auth/getUserId
+2024-12-20 13:40:59 [http-nio-8082-exec-1] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:40:59 [http-nio-8082-exec-4] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:40:59 [http-nio-8082-exec-8] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 13:40:59 [http-nio-8082-exec-1] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:40:59 [http-nio-8082-exec-4] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:40:59 [http-nio-8082-exec-8] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 13:40:59 [http-nio-8082-exec-2] DEBUG : Securing GET /auth/getUserId
+2024-12-20 13:40:59 [http-nio-8082-exec-10] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:40:59 [http-nio-8082-exec-9] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:40:59 [http-nio-8082-exec-5] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 13:40:59 [http-nio-8082-exec-2] DEBUG : Secured GET /auth/getUserId
+2024-12-20 13:40:59 [http-nio-8082-exec-10] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:40:59 [http-nio-8082-exec-9] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:40:59 [http-nio-8082-exec-5] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 13:41:06 [http-nio-8082-exec-3] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 13:41:06 [http-nio-8082-exec-3] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 13:41:06 [http-nio-8082-exec-3] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:41:06 [http-nio-8082-exec-7] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 13:41:06 [http-nio-8082-exec-7] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 13:41:06 [http-nio-8082-exec-7] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:41:07 [http-nio-8082-exec-6] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 13:41:07 [http-nio-8082-exec-4] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:41:07 [http-nio-8082-exec-1] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:41:07 [http-nio-8082-exec-6] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 13:41:07 [http-nio-8082-exec-4] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:41:07 [http-nio-8082-exec-1] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:41:07 [http-nio-8082-exec-2] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:41:07 [http-nio-8082-exec-8] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:41:07 [http-nio-8082-exec-10] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 13:41:07 [http-nio-8082-exec-2] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:41:07 [http-nio-8082-exec-8] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:41:07 [http-nio-8082-exec-10] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 13:41:11 [http-nio-8082-exec-9] DEBUG : Securing GET /auth/getUserId
+2024-12-20 13:41:11 [http-nio-8082-exec-5] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 13:41:11 [http-nio-8082-exec-3] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:41:11 [http-nio-8082-exec-7] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:41:11 [http-nio-8082-exec-3] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:41:11 [http-nio-8082-exec-7] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:41:11 [http-nio-8082-exec-9] DEBUG : Secured GET /auth/getUserId
+2024-12-20 13:41:11 [http-nio-8082-exec-5] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 13:41:11 [http-nio-8082-exec-1] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:41:11 [http-nio-8082-exec-4] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:41:11 [http-nio-8082-exec-6] DEBUG : Securing GET /auth/getUserId
+2024-12-20 13:41:11 [http-nio-8082-exec-8] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 13:41:11 [http-nio-8082-exec-4] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:41:11 [http-nio-8082-exec-1] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:41:11 [http-nio-8082-exec-6] DEBUG : Secured GET /auth/getUserId
+2024-12-20 13:41:11 [http-nio-8082-exec-8] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 13:45:14 [http-nio-8082-exec-6] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:45:14 [http-nio-8082-exec-4] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 13:45:14 [http-nio-8082-exec-1] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:45:14 [http-nio-8082-exec-6] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:45:14 [http-nio-8082-exec-4] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 13:45:14 [http-nio-8082-exec-1] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:45:22 [http-nio-8082-exec-8] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 13:45:22 [http-nio-8082-exec-8] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 13:45:22 [http-nio-8082-exec-8] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:45:22 [http-nio-8082-exec-2] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 13:45:22 [http-nio-8082-exec-2] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 13:45:22 [http-nio-8082-exec-2] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:45:22 [http-nio-8082-exec-3] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:45:22 [http-nio-8082-exec-7] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:45:22 [http-nio-8082-exec-10] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 13:45:22 [http-nio-8082-exec-3] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:45:22 [http-nio-8082-exec-7] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:45:22 [http-nio-8082-exec-10] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 13:45:22 [http-nio-8082-exec-5] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:45:22 [http-nio-8082-exec-6] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 13:45:22 [http-nio-8082-exec-9] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:45:22 [http-nio-8082-exec-5] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:45:22 [http-nio-8082-exec-6] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 13:45:22 [http-nio-8082-exec-9] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:53:23 [http-nio-8082-exec-2] DEBUG : Securing OPTIONS /auth/getUserId
+2024-12-20 13:53:23 [http-nio-8082-exec-2] DEBUG : Secured OPTIONS /auth/getUserId
+2024-12-20 13:53:23 [http-nio-8082-exec-7] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:53:23 [http-nio-8082-exec-3] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 13:53:23 [http-nio-8082-exec-2] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:53:23 [http-nio-8082-exec-10] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:53:23 [http-nio-8082-exec-5] DEBUG : Securing OPTIONS /auth/getUserId
+2024-12-20 13:53:23 [http-nio-8082-exec-5] DEBUG : Secured OPTIONS /auth/getUserId
+2024-12-20 13:53:23 [http-nio-8082-exec-5] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:53:23 [http-nio-8082-exec-6] DEBUG : Securing GET /auth/getUserId
+2024-12-20 13:53:23 [http-nio-8082-exec-3] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 13:53:23 [http-nio-8082-exec-10] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:53:23 [http-nio-8082-exec-7] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:53:23 [http-nio-8082-exec-6] DEBUG : Secured GET /auth/getUserId
+2024-12-20 13:53:23 [http-nio-8082-exec-4] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 13:53:23 [http-nio-8082-exec-9] DEBUG : Securing GET /auth/getUserId
+2024-12-20 13:53:23 [http-nio-8082-exec-8] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:53:23 [http-nio-8082-exec-9] DEBUG : Secured GET /auth/getUserId
+2024-12-20 13:53:23 [http-nio-8082-exec-1] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:53:23 [http-nio-8082-exec-1] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:53:23 [http-nio-8082-exec-8] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:53:23 [http-nio-8082-exec-4] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 13:53:31 [http-nio-8082-exec-6] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:53:31 [http-nio-8082-exec-5] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:53:31 [http-nio-8082-exec-2] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 13:53:31 [http-nio-8082-exec-2] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 13:53:31 [http-nio-8082-exec-6] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:53:31 [http-nio-8082-exec-5] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:53:31 [http-nio-8082-exec-10] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:53:31 [http-nio-8082-exec-7] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:53:31 [http-nio-8082-exec-10] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:53:31 [http-nio-8082-exec-7] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:53:31 [http-nio-8082-exec-3] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 13:53:31 [http-nio-8082-exec-3] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 13:53:49 [http-nio-8082-exec-9] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 13:53:49 [http-nio-8082-exec-9] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 13:53:49 [http-nio-8082-exec-9] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:53:49 [http-nio-8082-exec-1] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 13:53:49 [http-nio-8082-exec-1] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 13:53:49 [http-nio-8082-exec-1] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:53:50 [http-nio-8082-exec-5] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:53:50 [http-nio-8082-exec-4] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:53:50 [http-nio-8082-exec-8] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 13:53:50 [http-nio-8082-exec-8] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 13:53:50 [http-nio-8082-exec-5] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:53:50 [http-nio-8082-exec-4] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:53:50 [http-nio-8082-exec-2] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:53:50 [http-nio-8082-exec-6] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:53:50 [http-nio-8082-exec-6] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:53:50 [http-nio-8082-exec-2] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:53:50 [http-nio-8082-exec-10] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 13:53:50 [http-nio-8082-exec-10] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 13:53:58 [http-nio-8082-exec-7] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 13:53:58 [http-nio-8082-exec-3] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:53:58 [http-nio-8082-exec-9] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:53:58 [http-nio-8082-exec-9] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:53:58 [http-nio-8082-exec-7] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 13:53:58 [http-nio-8082-exec-3] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:53:58 [http-nio-8082-exec-1] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:53:58 [http-nio-8082-exec-5] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 13:53:58 [http-nio-8082-exec-4] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:53:58 [http-nio-8082-exec-1] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:53:58 [http-nio-8082-exec-4] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:53:58 [http-nio-8082-exec-5] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 13:55:00 [http-nio-8082-exec-4] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:55:00 [http-nio-8082-exec-1] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:55:00 [http-nio-8082-exec-7] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 13:55:00 [http-nio-8082-exec-1] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:55:00 [http-nio-8082-exec-4] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:55:00 [http-nio-8082-exec-7] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 13:55:04 [http-nio-8082-exec-8] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 13:55:04 [http-nio-8082-exec-5] DEBUG : Securing GET /auth/getUserId
+2024-12-20 13:55:04 [http-nio-8082-exec-2] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:55:04 [http-nio-8082-exec-9] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:55:04 [http-nio-8082-exec-2] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:55:04 [http-nio-8082-exec-5] DEBUG : Secured GET /auth/getUserId
+2024-12-20 13:55:04 [http-nio-8082-exec-9] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:55:04 [http-nio-8082-exec-8] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 13:55:04 [http-nio-8082-exec-3] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:55:04 [http-nio-8082-exec-6] DEBUG : Securing GET /auth/getUserId
+2024-12-20 13:55:04 [http-nio-8082-exec-8] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:55:04 [http-nio-8082-exec-3] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:55:04 [http-nio-8082-exec-6] DEBUG : Secured GET /auth/getUserId
+2024-12-20 13:55:04 [http-nio-8082-exec-8] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:55:04 [http-nio-8082-exec-1] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 13:55:04 [http-nio-8082-exec-1] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 13:55:26 [http-nio-8082-exec-4] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 13:55:26 [http-nio-8082-exec-4] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 13:55:26 [http-nio-8082-exec-4] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:55:26 [http-nio-8082-exec-7] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 13:55:26 [http-nio-8082-exec-7] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 13:55:26 [http-nio-8082-exec-7] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 13:55:27 [http-nio-8082-exec-5] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:55:27 [http-nio-8082-exec-2] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 13:55:27 [http-nio-8082-exec-9] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:55:27 [http-nio-8082-exec-5] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:55:27 [http-nio-8082-exec-2] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 13:55:27 [http-nio-8082-exec-9] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:55:27 [http-nio-8082-exec-10] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:55:27 [http-nio-8082-exec-10] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 13:55:27 [http-nio-8082-exec-8] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:55:27 [http-nio-8082-exec-3] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 13:55:27 [http-nio-8082-exec-8] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 13:55:27 [http-nio-8082-exec-3] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:03:51 [http-nio-8082-exec-5] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:03:51 [http-nio-8082-exec-5] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:03:51 [http-nio-8082-exec-10] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:03:51 [http-nio-8082-exec-2] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:03:51 [http-nio-8082-exec-10] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:03:51 [http-nio-8082-exec-2] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:03:57 [http-nio-8082-exec-8] DEBUG : Securing GET /auth/getUserId
+2024-12-20 14:03:57 [http-nio-8082-exec-3] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:03:57 [http-nio-8082-exec-1] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:03:57 [http-nio-8082-exec-6] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:03:57 [http-nio-8082-exec-3] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:03:57 [http-nio-8082-exec-8] DEBUG : Secured GET /auth/getUserId
+2024-12-20 14:03:57 [http-nio-8082-exec-6] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:03:57 [http-nio-8082-exec-1] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:03:57 [http-nio-8082-exec-3] DEBUG : Securing GET /auth/getUserId
+2024-12-20 14:03:57 [http-nio-8082-exec-9] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:03:57 [http-nio-8082-exec-4] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:03:57 [http-nio-8082-exec-7] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:03:57 [http-nio-8082-exec-3] DEBUG : Secured GET /auth/getUserId
+2024-12-20 14:03:57 [http-nio-8082-exec-9] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:03:57 [http-nio-8082-exec-7] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:03:57 [http-nio-8082-exec-4] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:04:10 [http-nio-8082-exec-2] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 14:04:10 [http-nio-8082-exec-2] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 14:04:10 [http-nio-8082-exec-2] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:04:10 [http-nio-8082-exec-10] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 14:04:10 [http-nio-8082-exec-10] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 14:04:10 [http-nio-8082-exec-10] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:04:11 [http-nio-8082-exec-6] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:04:11 [http-nio-8082-exec-1] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:04:11 [http-nio-8082-exec-8] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:04:11 [http-nio-8082-exec-1] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:04:11 [http-nio-8082-exec-8] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:04:11 [http-nio-8082-exec-6] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:04:11 [http-nio-8082-exec-5] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:04:11 [http-nio-8082-exec-3] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:04:11 [http-nio-8082-exec-3] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:04:11 [http-nio-8082-exec-5] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:04:11 [http-nio-8082-exec-9] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:04:11 [http-nio-8082-exec-9] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:04:43 [http-nio-8082-exec-4] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:04:43 [http-nio-8082-exec-4] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:04:43 [http-nio-8082-exec-2] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:04:43 [http-nio-8082-exec-7] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:04:43 [http-nio-8082-exec-7] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:04:43 [http-nio-8082-exec-2] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:04:45 [http-nio-8082-exec-10] DEBUG : Securing GET /auth/getUserId
+2024-12-20 14:04:45 [http-nio-8082-exec-6] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:04:45 [http-nio-8082-exec-1] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:04:45 [http-nio-8082-exec-8] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:04:45 [http-nio-8082-exec-10] DEBUG : Secured GET /auth/getUserId
+2024-12-20 14:04:45 [http-nio-8082-exec-6] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:04:45 [http-nio-8082-exec-8] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:04:45 [http-nio-8082-exec-3] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:04:45 [http-nio-8082-exec-9] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:04:45 [http-nio-8082-exec-5] DEBUG : Securing GET /auth/getUserId
+2024-12-20 14:04:45 [http-nio-8082-exec-1] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:04:45 [http-nio-8082-exec-3] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:04:45 [http-nio-8082-exec-5] DEBUG : Secured GET /auth/getUserId
+2024-12-20 14:04:45 [http-nio-8082-exec-9] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:04:45 [http-nio-8082-exec-4] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:04:45 [http-nio-8082-exec-4] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:05:06 [http-nio-8082-exec-7] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 14:05:06 [http-nio-8082-exec-7] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 14:05:06 [http-nio-8082-exec-7] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:05:06 [http-nio-8082-exec-2] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 14:05:06 [http-nio-8082-exec-2] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 14:05:07 [http-nio-8082-exec-2] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:05:07 [http-nio-8082-exec-8] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:05:07 [http-nio-8082-exec-10] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:05:07 [http-nio-8082-exec-6] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:05:07 [http-nio-8082-exec-10] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:05:07 [http-nio-8082-exec-6] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:05:07 [http-nio-8082-exec-8] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:05:07 [http-nio-8082-exec-1] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:05:07 [http-nio-8082-exec-1] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:05:07 [http-nio-8082-exec-5] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:05:07 [http-nio-8082-exec-3] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:05:07 [http-nio-8082-exec-3] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:05:07 [http-nio-8082-exec-5] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:05:21 [http-nio-8082-exec-9] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:05:21 [http-nio-8082-exec-4] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:05:21 [http-nio-8082-exec-7] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:05:21 [http-nio-8082-exec-9] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:05:21 [http-nio-8082-exec-4] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:05:21 [http-nio-8082-exec-7] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:05:23 [http-nio-8082-exec-2] DEBUG : Securing GET /auth/getUserId
+2024-12-20 14:05:23 [http-nio-8082-exec-10] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:05:23 [http-nio-8082-exec-8] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:05:23 [http-nio-8082-exec-6] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:05:23 [http-nio-8082-exec-2] DEBUG : Secured GET /auth/getUserId
+2024-12-20 14:05:23 [http-nio-8082-exec-8] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:05:23 [http-nio-8082-exec-10] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:05:23 [http-nio-8082-exec-6] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:05:23 [http-nio-8082-exec-3] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:05:23 [http-nio-8082-exec-1] DEBUG : Securing GET /auth/getUserId
+2024-12-20 14:05:23 [http-nio-8082-exec-5] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:05:23 [http-nio-8082-exec-3] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:05:23 [http-nio-8082-exec-1] DEBUG : Secured GET /auth/getUserId
+2024-12-20 14:05:23 [http-nio-8082-exec-5] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:05:23 [http-nio-8082-exec-4] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:05:23 [http-nio-8082-exec-4] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:05:31 [http-nio-8082-exec-9] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 14:05:31 [http-nio-8082-exec-9] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 14:05:31 [http-nio-8082-exec-9] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:05:31 [http-nio-8082-exec-7] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 14:05:31 [http-nio-8082-exec-7] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 14:05:31 [http-nio-8082-exec-7] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:05:32 [http-nio-8082-exec-2] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:05:32 [http-nio-8082-exec-8] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:05:32 [http-nio-8082-exec-6] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:05:32 [http-nio-8082-exec-6] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:05:32 [http-nio-8082-exec-2] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:05:32 [http-nio-8082-exec-8] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:05:32 [http-nio-8082-exec-10] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:05:32 [http-nio-8082-exec-3] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:05:32 [http-nio-8082-exec-5] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:05:32 [http-nio-8082-exec-10] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:05:32 [http-nio-8082-exec-3] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:05:32 [http-nio-8082-exec-5] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:05:42 [http-nio-8082-exec-1] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:05:42 [http-nio-8082-exec-4] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:05:42 [http-nio-8082-exec-9] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:05:42 [http-nio-8082-exec-4] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:05:42 [http-nio-8082-exec-1] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:05:42 [http-nio-8082-exec-9] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:27:03 [http-nio-8082-exec-3] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 14:27:03 [http-nio-8082-exec-3] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 14:27:03 [http-nio-8082-exec-3] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:27:03 [http-nio-8082-exec-5] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 14:27:03 [http-nio-8082-exec-5] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 14:27:03 [http-nio-8082-exec-5] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:27:04 [http-nio-8082-exec-4] DEBUG : Securing GET /api/hotels/gethotelbyid/1
+2024-12-20 14:27:04 [http-nio-8082-exec-4] DEBUG : Secured GET /api/hotels/gethotelbyid/1
+2024-12-20 14:27:04 [http-nio-8082-exec-4] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:27:04 [http-nio-8082-exec-9] DEBUG : Securing GET /api/hotels/gethotelbyid/1
+2024-12-20 14:27:04 [http-nio-8082-exec-9] DEBUG : Secured GET /api/hotels/gethotelbyid/1
+2024-12-20 14:27:04 [http-nio-8082-exec-9] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:27:21 [http-nio-8082-exec-1] DEBUG : Securing OPTIONS /api/users/getuserbyusername/q
+2024-12-20 14:27:21 [http-nio-8082-exec-1] DEBUG : Secured OPTIONS /api/users/getuserbyusername/q
+2024-12-20 14:27:21 [http-nio-8082-exec-1] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:27:21 [http-nio-8082-exec-7] DEBUG : Securing GET /api/users/getuserbyusername/q
+2024-12-20 14:27:21 [http-nio-8082-exec-7] DEBUG : Secured GET /api/users/getuserbyusername/q
+2024-12-20 14:27:21 [http-nio-8082-exec-6] DEBUG : Securing OPTIONS /api/bookings/createbooking
+2024-12-20 14:27:21 [http-nio-8082-exec-6] DEBUG : Secured OPTIONS /api/bookings/createbooking
+2024-12-20 14:27:21 [http-nio-8082-exec-6] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:27:21 [http-nio-8082-exec-2] DEBUG : Securing POST /api/bookings/createbooking
+2024-12-20 14:27:21 [http-nio-8082-exec-2] DEBUG : Secured POST /api/bookings/createbooking
+2024-12-20 14:27:22 [http-nio-8082-exec-8] DEBUG : Securing OPTIONS /api/users/getuser/7
+2024-12-20 14:27:22 [http-nio-8082-exec-10] DEBUG : Securing OPTIONS /api/reviews/getreviewbyuserid/7
+2024-12-20 14:27:22 [http-nio-8082-exec-8] DEBUG : Secured OPTIONS /api/users/getuser/7
+2024-12-20 14:27:22 [http-nio-8082-exec-10] DEBUG : Secured OPTIONS /api/reviews/getreviewbyuserid/7
+2024-12-20 14:27:22 [http-nio-8082-exec-5] DEBUG : Securing OPTIONS /api/users/getuser/7
+2024-12-20 14:27:22 [http-nio-8082-exec-5] DEBUG : Secured OPTIONS /api/users/getuser/7
+2024-12-20 14:27:22 [http-nio-8082-exec-10] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:27:22 [http-nio-8082-exec-8] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:27:22 [http-nio-8082-exec-5] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:27:22 [http-nio-8082-exec-3] DEBUG : Securing OPTIONS /api/bookings/getbookingbyuserid/7
+2024-12-20 14:27:22 [http-nio-8082-exec-4] DEBUG : Securing OPTIONS /api/reviews/getreviewbyuserid/7
+2024-12-20 14:27:22 [http-nio-8082-exec-4] DEBUG : Secured OPTIONS /api/reviews/getreviewbyuserid/7
+2024-12-20 14:27:22 [http-nio-8082-exec-3] DEBUG : Secured OPTIONS /api/bookings/getbookingbyuserid/7
+2024-12-20 14:27:22 [http-nio-8082-exec-4] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:27:22 [http-nio-8082-exec-3] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:27:22 [http-nio-8082-exec-9] DEBUG : Securing OPTIONS /api/bookings/getbookingbyuserid/7
+2024-12-20 14:27:22 [http-nio-8082-exec-9] DEBUG : Secured OPTIONS /api/bookings/getbookingbyuserid/7
+2024-12-20 14:27:22 [http-nio-8082-exec-9] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:27:22 [http-nio-8082-exec-9] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:27:22 [http-nio-8082-exec-1] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:27:22 [http-nio-8082-exec-6] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:27:22 [http-nio-8082-exec-9] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:27:22 [http-nio-8082-exec-1] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:27:22 [http-nio-8082-exec-6] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:27:22 [http-nio-8082-exec-2] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:27:22 [http-nio-8082-exec-2] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:27:22 [http-nio-8082-exec-8] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:27:22 [http-nio-8082-exec-10] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:27:22 [http-nio-8082-exec-8] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:27:22 [http-nio-8082-exec-10] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:27:29 [http-nio-8082-exec-5] DEBUG : Securing OPTIONS /api/reviews/createreview
+2024-12-20 14:27:29 [http-nio-8082-exec-5] DEBUG : Secured OPTIONS /api/reviews/createreview
+2024-12-20 14:27:29 [http-nio-8082-exec-5] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:27:29 [http-nio-8082-exec-4] DEBUG : Securing POST /api/reviews/createreview
+2024-12-20 14:27:29 [http-nio-8082-exec-4] DEBUG : Secured POST /api/reviews/createreview
+2024-12-20 14:27:29 [http-nio-8082-exec-3] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:27:29 [http-nio-8082-exec-3] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:27:36 [http-nio-8082-exec-7] DEBUG : Securing OPTIONS /api/reviews/updatereviewbyid/1
+2024-12-20 14:27:36 [http-nio-8082-exec-7] DEBUG : Secured OPTIONS /api/reviews/updatereviewbyid/1
+2024-12-20 14:27:36 [http-nio-8082-exec-7] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:27:36 [http-nio-8082-exec-1] DEBUG : Securing PUT /api/reviews/updatereviewbyid/1
+2024-12-20 14:27:36 [http-nio-8082-exec-1] DEBUG : Secured PUT /api/reviews/updatereviewbyid/1
+2024-12-20 14:27:36 [http-nio-8082-exec-9] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:27:36 [http-nio-8082-exec-9] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:30:47 [http-nio-8082-exec-3] DEBUG : Securing OPTIONS /auth/getUserId
+2024-12-20 14:30:47 [http-nio-8082-exec-3] DEBUG : Secured OPTIONS /auth/getUserId
+2024-12-20 14:30:47 [http-nio-8082-exec-3] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:30:47 [http-nio-8082-exec-7] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:30:47 [http-nio-8082-exec-1] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:30:47 [http-nio-8082-exec-5] DEBUG : Securing OPTIONS /auth/getUserId
+2024-12-20 14:30:47 [http-nio-8082-exec-7] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:30:47 [http-nio-8082-exec-9] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:30:47 [http-nio-8082-exec-5] DEBUG : Secured OPTIONS /auth/getUserId
+2024-12-20 14:30:47 [http-nio-8082-exec-1] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:30:47 [http-nio-8082-exec-5] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:30:47 [http-nio-8082-exec-2] DEBUG : Securing GET /auth/getUserId
+2024-12-20 14:30:47 [http-nio-8082-exec-9] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:30:47 [http-nio-8082-exec-2] DEBUG : Secured GET /auth/getUserId
+2024-12-20 14:30:47 [http-nio-8082-exec-6] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:30:47 [http-nio-8082-exec-8] DEBUG : Securing GET /auth/getUserId
+2024-12-20 14:30:47 [http-nio-8082-exec-10] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:30:47 [http-nio-8082-exec-6] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:30:47 [http-nio-8082-exec-8] DEBUG : Secured GET /auth/getUserId
+2024-12-20 14:30:47 [http-nio-8082-exec-10] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:30:47 [http-nio-8082-exec-10] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:30:47 [http-nio-8082-exec-10] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:31:52 [http-nio-8082-exec-9] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 14:31:52 [http-nio-8082-exec-9] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 14:31:52 [http-nio-8082-exec-9] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:31:52 [http-nio-8082-exec-8] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 14:31:52 [http-nio-8082-exec-8] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 14:31:52 [http-nio-8082-exec-8] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:31:53 [http-nio-8082-exec-6] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:31:53 [http-nio-8082-exec-10] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:31:53 [http-nio-8082-exec-4] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:31:53 [http-nio-8082-exec-6] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:31:53 [http-nio-8082-exec-10] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:31:53 [http-nio-8082-exec-4] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:31:53 [http-nio-8082-exec-3] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:31:53 [http-nio-8082-exec-7] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:31:53 [http-nio-8082-exec-7] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:31:53 [http-nio-8082-exec-1] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:31:53 [http-nio-8082-exec-3] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:31:53 [http-nio-8082-exec-1] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:38:56 [http-nio-8082-exec-8] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:38:56 [http-nio-8082-exec-6] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:38:56 [http-nio-8082-exec-10] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:38:56 [http-nio-8082-exec-8] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:38:56 [http-nio-8082-exec-6] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:38:56 [http-nio-8082-exec-10] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:39:07 [http-nio-8082-exec-4] DEBUG : Securing OPTIONS /api/users/updateuser/7
+2024-12-20 14:39:07 [http-nio-8082-exec-4] DEBUG : Secured OPTIONS /api/users/updateuser/7
+2024-12-20 14:39:07 [http-nio-8082-exec-4] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:39:07 [http-nio-8082-exec-7] DEBUG : Securing PUT /api/users/updateuser/7
+2024-12-20 14:39:07 [http-nio-8082-exec-7] DEBUG : Secured PUT /api/users/updateuser/7
+2024-12-20 14:39:07 [http-nio-8082-exec-3] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:39:07 [http-nio-8082-exec-3] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:39:19 [http-nio-8082-exec-1] DEBUG : Securing PUT /api/users/updateuser/7
+2024-12-20 14:39:19 [http-nio-8082-exec-1] DEBUG : Secured PUT /api/users/updateuser/7
+2024-12-20 14:39:19 [http-nio-8082-exec-2] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:39:19 [http-nio-8082-exec-2] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:40:32 [http-nio-8082-exec-6] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 14:40:32 [http-nio-8082-exec-6] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 14:40:32 [http-nio-8082-exec-6] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:40:32 [http-nio-8082-exec-10] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 14:40:32 [http-nio-8082-exec-10] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 14:40:32 [http-nio-8082-exec-10] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:41:50 [http-nio-8082-exec-3] DEBUG : Securing GET /auth/getUserId
+2024-12-20 14:41:50 [http-nio-8082-exec-3] DEBUG : Secured GET /auth/getUserId
+2024-12-20 14:44:33 [http-nio-8082-exec-2] DEBUG : Securing GET /auth/getUserId
+2024-12-20 14:44:33 [http-nio-8082-exec-2] DEBUG : Secured GET /auth/getUserId
+2024-12-20 14:44:44 [http-nio-8082-exec-9] DEBUG : Securing GET /auth/getUserId
+2024-12-20 14:44:44 [http-nio-8082-exec-9] DEBUG : Secured GET /auth/getUserId
+2024-12-20 14:44:47 [http-nio-8082-exec-5] DEBUG : Securing GET /auth/getUserId
+2024-12-20 14:44:47 [http-nio-8082-exec-8] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 14:44:47 [http-nio-8082-exec-8] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 14:44:47 [http-nio-8082-exec-5] DEBUG : Secured GET /auth/getUserId
+2024-12-20 14:44:47 [http-nio-8082-exec-6] DEBUG : Securing GET /auth/getUserId
+2024-12-20 14:44:47 [http-nio-8082-exec-6] DEBUG : Secured GET /auth/getUserId
+2024-12-20 14:44:47 [http-nio-8082-exec-8] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:44:47 [http-nio-8082-exec-10] DEBUG : Securing GET /api/hotels/getallhotel
+2024-12-20 14:44:47 [http-nio-8082-exec-10] DEBUG : Secured GET /api/hotels/getallhotel
+2024-12-20 14:44:47 [http-nio-8082-exec-10] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:47:47 [http-nio-8082-exec-3] DEBUG : Securing GET /auth/getUserId
+2024-12-20 14:47:47 [http-nio-8082-exec-3] DEBUG : Secured GET /auth/getUserId
+2024-12-20 14:49:04 [http-nio-8082-exec-2] DEBUG : Securing GET /auth/getUserId
+2024-12-20 14:49:04 [http-nio-8082-exec-2] DEBUG : Secured GET /auth/getUserId
+2024-12-20 14:50:44 [http-nio-8082-exec-5] DEBUG : Securing GET /auth/getUserId
+2024-12-20 14:50:44 [http-nio-8082-exec-5] DEBUG : Secured GET /auth/getUserId
+2024-12-20 14:51:19 [http-nio-8082-exec-6] DEBUG : Securing GET /auth/getUserId
+2024-12-20 14:51:19 [http-nio-8082-exec-6] DEBUG : Secured GET /auth/getUserId
+2024-12-20 14:51:43 [http-nio-8082-exec-8] DEBUG : Securing GET /auth/getUserId
+2024-12-20 14:51:43 [http-nio-8082-exec-8] DEBUG : Secured GET /auth/getUserId
+2024-12-20 14:51:55 [http-nio-8082-exec-10] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:51:55 [http-nio-8082-exec-10] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:51:55 [http-nio-8082-exec-7] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:51:55 [http-nio-8082-exec-7] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:51:55 [http-nio-8082-exec-4] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:51:55 [http-nio-8082-exec-3] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:51:55 [http-nio-8082-exec-3] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:51:55 [http-nio-8082-exec-1] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:51:55 [http-nio-8082-exec-4] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:51:55 [http-nio-8082-exec-1] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:51:55 [http-nio-8082-exec-2] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:51:55 [http-nio-8082-exec-2] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:55:39 [http-nio-8082-exec-8] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:55:39 [http-nio-8082-exec-10] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:55:39 [http-nio-8082-exec-7] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:55:39 [http-nio-8082-exec-10] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 14:55:39 [http-nio-8082-exec-8] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:55:39 [http-nio-8082-exec-7] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 14:55:39 [http-nio-8082-exec-3] DEBUG : Securing GET /api/users/getProfileImage/7
+2024-12-20 14:55:39 [http-nio-8082-exec-3] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:55:39 [http-nio-8082-exec-3] DEBUG : Saved request http://localhost:8082/api/users/getProfileImage/7?continue to session
+2024-12-20 14:55:39 [http-nio-8082-exec-3] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 14:55:39 [http-nio-8082-exec-3] DEBUG : Securing GET /error
+2024-12-20 14:55:39 [http-nio-8082-exec-3] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:55:39 [http-nio-8082-exec-3] DEBUG : Saved request http://localhost:8082/error?continue to session
+2024-12-20 14:55:39 [http-nio-8082-exec-3] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 14:57:20 [http-nio-8082-exec-6] DEBUG : Securing PUT /api/users/updateuser/7
+2024-12-20 14:57:20 [http-nio-8082-exec-6] DEBUG : Secured PUT /api/users/updateuser/7
+2024-12-20 14:57:20 [http-nio-8082-exec-9] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 14:57:20 [http-nio-8082-exec-9] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 14:57:20 [http-nio-8082-exec-8] DEBUG : Securing GET /api/users/getProfileImage/7
+2024-12-20 14:57:20 [http-nio-8082-exec-8] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:57:20 [http-nio-8082-exec-8] DEBUG : Saved request http://localhost:8082/api/users/getProfileImage/7?continue to session
+2024-12-20 14:57:20 [http-nio-8082-exec-8] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 14:57:20 [http-nio-8082-exec-8] DEBUG : Securing GET /error
+2024-12-20 14:57:20 [http-nio-8082-exec-8] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 14:57:20 [http-nio-8082-exec-8] DEBUG : Saved request http://localhost:8082/error?continue to session
+2024-12-20 14:57:20 [http-nio-8082-exec-8] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 15:05:43 [http-nio-8082-exec-3] DEBUG : Securing OPTIONS /auth/getUserId
+2024-12-20 15:05:43 [http-nio-8082-exec-3] DEBUG : Secured OPTIONS /auth/getUserId
+2024-12-20 15:05:43 [http-nio-8082-exec-3] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 15:05:43 [http-nio-8082-exec-5] DEBUG : Securing OPTIONS /api/users/getuser/7
+2024-12-20 15:05:43 [http-nio-8082-exec-5] DEBUG : Secured OPTIONS /api/users/getuser/7
+2024-12-20 15:05:43 [http-nio-8082-exec-5] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 15:05:43 [http-nio-8082-exec-4] DEBUG : Securing GET /auth/getUserId
+2024-12-20 15:05:43 [http-nio-8082-exec-4] DEBUG : Secured GET /auth/getUserId
+2024-12-20 15:05:43 [http-nio-8082-exec-1] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 15:05:43 [http-nio-8082-exec-1] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 15:05:43 [http-nio-8082-exec-2] DEBUG : Securing OPTIONS /api/reviews/getreviewbyuserid/7
+2024-12-20 15:05:43 [http-nio-8082-exec-6] DEBUG : Securing OPTIONS /api/bookings/getbookingbyuserid/7
+2024-12-20 15:05:43 [http-nio-8082-exec-2] DEBUG : Secured OPTIONS /api/reviews/getreviewbyuserid/7
+2024-12-20 15:05:43 [http-nio-8082-exec-6] DEBUG : Secured OPTIONS /api/bookings/getbookingbyuserid/7
+2024-12-20 15:05:43 [http-nio-8082-exec-2] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 15:05:43 [http-nio-8082-exec-6] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 15:05:43 [http-nio-8082-exec-9] DEBUG : Securing GET /auth/getUserId
+2024-12-20 15:05:43 [http-nio-8082-exec-8] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 15:05:43 [http-nio-8082-exec-10] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 15:05:43 [http-nio-8082-exec-9] DEBUG : Secured GET /auth/getUserId
+2024-12-20 15:05:43 [http-nio-8082-exec-7] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 15:05:43 [http-nio-8082-exec-10] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 15:05:43 [http-nio-8082-exec-7] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 15:05:43 [http-nio-8082-exec-8] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 15:05:43 [http-nio-8082-exec-3] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 15:05:43 [http-nio-8082-exec-5] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 15:05:43 [http-nio-8082-exec-5] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 15:05:43 [http-nio-8082-exec-3] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 15:05:43 [http-nio-8082-exec-4] DEBUG : Securing GET /api/users/getProfileImage/7
+2024-12-20 15:05:43 [http-nio-8082-exec-4] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 15:05:43 [http-nio-8082-exec-4] DEBUG : Saved request http://localhost:8082/api/users/getProfileImage/7?continue to session
+2024-12-20 15:05:43 [http-nio-8082-exec-4] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 15:05:43 [http-nio-8082-exec-4] DEBUG : Securing GET /error
+2024-12-20 15:05:43 [http-nio-8082-exec-4] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 15:05:43 [http-nio-8082-exec-4] DEBUG : Saved request http://localhost:8082/error?continue to session
+2024-12-20 15:05:43 [http-nio-8082-exec-4] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 15:07:00 [http-nio-8082-exec-10] DEBUG : Securing GET /auth/getUserId
+2024-12-20 15:07:00 [http-nio-8082-exec-8] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 15:07:00 [http-nio-8082-exec-10] DEBUG : Secured GET /auth/getUserId
+2024-12-20 15:07:00 [http-nio-8082-exec-3] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 15:07:00 [http-nio-8082-exec-8] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 15:07:00 [http-nio-8082-exec-5] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 15:07:00 [http-nio-8082-exec-3] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 15:07:00 [http-nio-8082-exec-5] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 15:07:00 [http-nio-8082-exec-4] DEBUG : Securing GET /auth/getUserId
+2024-12-20 15:07:00 [http-nio-8082-exec-1] DEBUG : Securing GET /api/bookings/getbookingbyuserid/7
+2024-12-20 15:07:00 [http-nio-8082-exec-2] DEBUG : Securing GET /api/reviews/getreviewbyuserid/7
+2024-12-20 15:07:00 [http-nio-8082-exec-6] DEBUG : Securing GET /api/users/getuser/7
+2024-12-20 15:07:00 [http-nio-8082-exec-4] DEBUG : Secured GET /auth/getUserId
+2024-12-20 15:07:00 [http-nio-8082-exec-1] DEBUG : Secured GET /api/bookings/getbookingbyuserid/7
+2024-12-20 15:07:00 [http-nio-8082-exec-6] DEBUG : Secured GET /api/users/getuser/7
+2024-12-20 15:07:00 [http-nio-8082-exec-2] DEBUG : Secured GET /api/reviews/getreviewbyuserid/7
+2024-12-20 15:07:00 [http-nio-8082-exec-7] DEBUG : Securing GET /api/users/getProfileImage/7
+2024-12-20 15:07:00 [http-nio-8082-exec-7] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 15:07:00 [http-nio-8082-exec-7] DEBUG : Saved request http://localhost:8082/api/users/getProfileImage/7?continue to session
+2024-12-20 15:07:00 [http-nio-8082-exec-7] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 15:07:00 [http-nio-8082-exec-7] DEBUG : Securing GET /error
+2024-12-20 15:07:00 [http-nio-8082-exec-7] DEBUG : Set SecurityContextHolder to anonymous SecurityContext
+2024-12-20 15:07:00 [http-nio-8082-exec-7] DEBUG : Saved request http://localhost:8082/error?continue to session
+2024-12-20 15:07:00 [http-nio-8082-exec-7] DEBUG : Pre-authenticated entry point called. Rejecting access
+2024-12-20 15:12:06 [File Watcher] INFO  : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-12-20 15:12:07 [Thread-5] INFO  : Stopping ProtocolHandler ["http-nio-8082"]
+2024-12-20 15:12:07 [Thread-5] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-20 15:12:07 [Thread-5] INFO  : HikariPool-1 - Shutdown initiated...
+2024-12-20 15:12:07 [Thread-5] INFO  : HikariPool-1 - Shutdown completed.
+2024-12-20 15:12:07 [restartedMain] INFO  : Starting CozyHavenStayApplication using Java 17.0.12 with PID 21948 (C:\Users\ADITY\CozyHavenStay\CozyHavenStay\target\classes started by ADITY in C:\Users\ADITY\CozyHavenStay\CozyHavenStay)
+2024-12-20 15:12:07 [restartedMain] INFO  : No active profile set, falling back to 1 default profile: "default"
+2024-12-20 15:12:07 [restartedMain] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-20 15:12:07 [restartedMain] INFO  : Finished Spring Data repository scanning in 65 ms. Found 7 JPA repository interfaces.
+2024-12-20 15:12:08 [restartedMain] DEBUG : Found AspectJ method: public void com.hexaware.CozyHavenStay.aspect.LoggingAspect.logBeforeV1(org.aspectj.lang.JoinPoint)
+2024-12-20 15:12:08 [restartedMain] DEBUG : Found AspectJ method: public void com.hexaware.CozyHavenStay.aspect.LoggingAspect.throwingAdvice(org.aspectj.lang.JoinPoint,java.lang.Throwable)
+2024-12-20 15:12:08 [restartedMain] INFO  : Tomcat initialized with port 8082 (http)
+2024-12-20 15:12:08 [restartedMain] INFO  : Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2024-12-20 15:12:08 [restartedMain] INFO  : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2024-12-20 15:12:08 [restartedMain] INFO  : Initializing ProtocolHandler ["http-nio-8082"]
+2024-12-20 15:12:08 [restartedMain] INFO  : Starting service [Tomcat]
+2024-12-20 15:12:08 [restartedMain] INFO  : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2024-12-20 15:12:08 [restartedMain] INFO  : Initializing Spring embedded WebApplicationContext
+2024-12-20 15:12:08 [restartedMain] INFO  : Root WebApplicationContext: initialization completed in 841 ms
+2024-12-20 15:12:08 [restartedMain] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-20 15:12:08 [restartedMain] INFO  : HHH000026: Second-level cache disabled
+2024-12-20 15:12:08 [restartedMain] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-20 15:12:08 [restartedMain] INFO  : HikariPool-2 - Starting...
+2024-12-20 15:12:08 [restartedMain] INFO  : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5f9e5d05
+2024-12-20 15:12:08 [restartedMain] INFO  : HikariPool-2 - Start completed.
+2024-12-20 15:12:08 [restartedMain] WARN  : HHH000511: The 5.6.29 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-12-20 15:12:08 [restartedMain] WARN  : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-20 15:12:09 [restartedMain] INFO  : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-20 15:12:09 [restartedMain] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-20 15:12:09 [restartedMain] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-20 15:12:09 [restartedMain] INFO  : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-12-20 15:12:10 [restartedMain] DEBUG : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JWTFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-12-20 15:12:10 [restartedMain] INFO  : LiveReload server is running on port 35729
+2024-12-20 15:12:10 [restartedMain] INFO  : Starting ProtocolHandler ["http-nio-8082"]
+2024-12-20 15:12:10 [restartedMain] INFO  : Tomcat started on port 8082 (http) with context path '/'
+2024-12-20 15:12:10 [restartedMain] INFO  : Started CozyHavenStayApplication in 3.049 seconds (process running for 9274.209)
+2024-12-20 15:12:10 [restartedMain] INFO  : Condition evaluation unchanged
