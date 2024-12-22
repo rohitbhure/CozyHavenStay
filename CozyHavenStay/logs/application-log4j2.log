@@ -1,26 +1,52 @@
-2024-12-22 00:13:30 [background-preinit] INFO  : HV000001: Hibernate Validator 8.0.1.Final
-2024-12-22 00:13:30 [main] INFO  : Starting ReviewServiceImplTest using Java 17.0.12 with PID 19420 (started by ADITY in C:\Users\ADITY\CozyHavenStay\CozyHavenStay)
-2024-12-22 00:13:30 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
-2024-12-22 00:13:30 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-12-22 00:13:31 [main] INFO  : Finished Spring Data repository scanning in 97 ms. Found 7 JPA repository interfaces.
-2024-12-22 00:13:32 [main] DEBUG : Found AspectJ method: public void com.hexaware.CozyHavenStay.aspect.LoggingAspect.logBeforeV1(org.aspectj.lang.JoinPoint)
-2024-12-22 00:13:32 [main] DEBUG : Found AspectJ method: public void com.hexaware.CozyHavenStay.aspect.LoggingAspect.throwingAdvice(org.aspectj.lang.JoinPoint,java.lang.Throwable)
-2024-12-22 00:13:32 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-12-22 00:13:32 [main] INFO  : HHH000412: Hibernate ORM core version 6.5.3.Final
-2024-12-22 00:13:32 [main] INFO  : HHH000026: Second-level cache disabled
-2024-12-22 00:13:32 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-12-22 00:13:32 [main] INFO  : HikariPool-1 - Starting...
-2024-12-22 00:13:32 [main] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6a3e633a
-2024-12-22 00:13:32 [main] INFO  : HikariPool-1 - Start completed.
-2024-12-22 00:13:32 [main] WARN  : HHH000511: The 5.6.29 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
-2024-12-22 00:13:32 [main] WARN  : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-12-22 00:13:33 [main] INFO  : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-12-22 00:13:33 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-12-22 00:13:34 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-12-22 00:13:34 [main] INFO  : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
-2024-12-22 00:13:34 [main] INFO  : Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-12-22 00:13:35 [main] DEBUG : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JWTFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
-2024-12-22 00:13:35 [main] INFO  : Started ReviewServiceImplTest in 6.053 seconds (process running for 7.61)
-2024-12-22 00:13:35 [SpringApplicationShutdownHook] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-12-22 00:13:35 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown initiated...
-2024-12-22 00:13:35 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown completed.
+2024-12-22 13:27:20 [background-preinit] INFO  : HV000001: Hibernate Validator 8.0.1.Final
+2024-12-22 13:27:20 [main] INFO  : Starting CozyHavenStayApplicationTests using Java 23.0.1 with PID 17876 (started by ADITY in C:\Users\ADITY\CozyHavenStay\CozyHavenStay)
+2024-12-22 13:27:20 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2024-12-22 13:27:21 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-22 13:27:21 [main] INFO  : Finished Spring Data repository scanning in 62 ms. Found 7 JPA repository interfaces.
+2024-12-22 13:27:21 [main] DEBUG : Found AspectJ method: public void com.hexaware.CozyHavenStay.aspect.LoggingAspect.logBeforeV1(org.aspectj.lang.JoinPoint)
+2024-12-22 13:27:21 [main] DEBUG : Found AspectJ method: public void com.hexaware.CozyHavenStay.aspect.LoggingAspect.throwingAdvice(org.aspectj.lang.JoinPoint,java.lang.Throwable)
+2024-12-22 13:27:21 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-22 13:27:21 [main] INFO  : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-22 13:27:21 [main] INFO  : HHH000026: Second-level cache disabled
+2024-12-22 13:27:22 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-22 13:27:22 [main] INFO  : HikariPool-1 - Starting...
+2024-12-22 13:27:22 [main] INFO  : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4c0bfe9e
+2024-12-22 13:27:22 [main] INFO  : HikariPool-1 - Start completed.
+2024-12-22 13:27:22 [main] WARN  : HHH000511: The 5.6.29 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-12-22 13:27:22 [main] WARN  : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-22 13:27:23 [main] INFO  : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-22 13:27:23 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-22 13:27:23 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-22 13:27:23 [main] INFO  : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-12-22 13:27:23 [main] INFO  : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-22 13:27:24 [main] DEBUG : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JWTFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-12-22 13:27:24 [main] INFO  : Started CozyHavenStayApplicationTests in 4.445 seconds (process running for 6.167)
+2024-12-22 13:27:24 [main] INFO  : Could not detect default configuration classes for test class [com.hexaware.CozyHavenStay.ReviewServiceImplTest]: ReviewServiceImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-22 13:27:24 [main] INFO  : Found @SpringBootConfiguration com.hexaware.CozyHavenStay.CozyHavenStayApplication for test class com.hexaware.CozyHavenStay.ReviewServiceImplTest
+2024-12-22 13:27:24 [main] INFO  : Restart disabled due to context in which it is running
+2024-12-22 13:27:24 [main] INFO  : Starting ReviewServiceImplTest using Java 23.0.1 with PID 17876 (started by ADITY in C:\Users\ADITY\CozyHavenStay\CozyHavenStay)
+2024-12-22 13:27:24 [main] INFO  : No active profile set, falling back to 1 default profile: "default"
+2024-12-22 13:27:25 [main] INFO  : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-22 13:27:25 [main] INFO  : Finished Spring Data repository scanning in 17 ms. Found 7 JPA repository interfaces.
+2024-12-22 13:27:25 [main] DEBUG : Found AspectJ method: public void com.hexaware.CozyHavenStay.aspect.LoggingAspect.logBeforeV1(org.aspectj.lang.JoinPoint)
+2024-12-22 13:27:25 [main] DEBUG : Found AspectJ method: public void com.hexaware.CozyHavenStay.aspect.LoggingAspect.throwingAdvice(org.aspectj.lang.JoinPoint,java.lang.Throwable)
+2024-12-22 13:27:25 [main] INFO  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-22 13:27:25 [main] INFO  : HHH000026: Second-level cache disabled
+2024-12-22 13:27:25 [main] INFO  : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-22 13:27:25 [main] INFO  : HikariPool-2 - Starting...
+2024-12-22 13:27:25 [main] INFO  : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7b29d791
+2024-12-22 13:27:25 [main] INFO  : HikariPool-2 - Start completed.
+2024-12-22 13:27:25 [main] WARN  : HHH000511: The 5.6.29 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-12-22 13:27:25 [main] WARN  : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-22 13:27:25 [main] INFO  : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-22 13:27:25 [main] INFO  : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-22 13:27:25 [main] WARN  : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-22 13:27:25 [main] INFO  : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2024-12-22 13:27:25 [main] DEBUG : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JWTFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-12-22 13:27:25 [main] INFO  : Started ReviewServiceImplTest in 0.733 seconds (process running for 7.049)
+2024-12-22 13:27:25 [SpringApplicationShutdownHook] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-22 13:27:25 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown initiated...
+2024-12-22 13:27:25 [SpringApplicationShutdownHook] INFO  : HikariPool-1 - Shutdown completed.
+2024-12-22 13:27:25 [SpringApplicationShutdownHook] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-22 13:27:25 [SpringApplicationShutdownHook] INFO  : HikariPool-2 - Shutdown initiated...
+2024-12-22 13:27:25 [SpringApplicationShutdownHook] INFO  : HikariPool-2 - Shutdown completed.
