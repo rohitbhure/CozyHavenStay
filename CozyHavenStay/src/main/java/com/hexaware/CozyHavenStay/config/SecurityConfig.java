@@ -48,13 +48,15 @@ public class SecurityConfig {
                 .requestMatchers("/api/users/register").permitAll()
                 .requestMatchers("/api/hotels/getallhotel").permitAll()
                 .requestMatchers("/api/hotels/searchbylocation").permitAll()
+                .requestMatchers("/api/hotels/search").permitAll()
                 .requestMatchers("/api/hotels/gethotelbyid/**").permitAll()
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                .requestMatchers("/api/chat/message").permitAll()
                 .anyRequest().authenticated()
             )
             .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);  // Add JWTFilter before UsernamePasswordAuthenticationFilter
         
 
-        return http.build();
+        return http.build(); 
     }
 }

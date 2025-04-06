@@ -14,7 +14,7 @@ public class CozyHavenStayApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CozyHavenStayApplication.class, args);
 	}
-	
+	 
 	@Bean
 	ModelMapper modelMapper(){
 		return new ModelMapper();
